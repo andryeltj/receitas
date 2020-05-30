@@ -1,0 +1,26 @@
+app: atril
+binpatch: true
+
+ingredients:
+  script:
+    - wget http://br.archive.ubuntu.com/ubuntu/pool/universe/a/atril/atril_1.24.0-1_amd64.deb
+    - wget http://br.archive.ubuntu.com/ubuntu/pool/universe/a/atril/atril-common_1.24.0-1_all.deb
+    - wget http://br.archive.ubuntu.com/ubuntu/pool/universe/a/atril/libatrildocument3_1.24.0-1_amd64.deb
+    - wget http://br.archive.ubuntu.com/ubuntu/pool/universe/a/atril/libatrilview3_1.24.0-1_amd64.deb
+    - wget http://br.archive.ubuntu.com/ubuntu/pool/main/t/texlive-bin/libsynctex2_2019.20190605.51237-3build2_amd64.deb
+  dist: focal
+  sources: 
+    - deb http://archive.ubuntu.com/ubuntu/ focal main universe
+
+script:
+  - cat > atril.desktop <<\EOF
+  - [Desktop Entry]
+  - Categories=Utility;GTK;
+  - Comment=Visualizar arquivos de PDF
+  - Exec=atril %U
+  - Icon=atril
+  - Name=Leitor de PDF
+  - StartupNotify=false
+  - Type=Application
+  - EOF
+  - cp ../../../../apps/receitas/atril.svg .

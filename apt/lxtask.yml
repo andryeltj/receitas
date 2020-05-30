@@ -1,0 +1,20 @@
+app: lxtask
+binpatch: true
+
+ingredients:
+  dist: focal
+  sources: 
+    - deb http://archive.ubuntu.com/ubuntu/ focal main universe
+
+script:
+  - cat > lxtask.desktop <<\EOF
+  - [Desktop Entry]
+  - Categories=System;GTK;
+  - Comment=Gerenciador de tarefas
+  - Exec=lxtask
+  - Icon=lxtask
+  - Name=Gerenciador de tarefas
+  - StartupNotify=false
+  - Type=Application
+  - EOF
+  - cp ../../../../apps/receitas/lxtask.png .

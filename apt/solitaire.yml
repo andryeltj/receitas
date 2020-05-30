@@ -1,0 +1,20 @@
+app: aisleriot
+binpatch: true
+
+ingredients:
+  dist: focal
+  sources: 
+    - deb http://archive.ubuntu.com/ubuntu/ focal main universe
+
+script:
+  - cat > aisleriot.desktop <<\EOF
+  - [Desktop Entry]
+  - Categories=Game;GTK;
+  - Comment=Jogo de Paciencia
+  - Exec=sol
+  - Icon=solitaire
+  - Name=Paciencia
+  - StartupNotify=false
+  - Type=Application
+  - EOF
+  - cp /media/usuario/DADOS/Wapps/APPS/receitas/solitaire.svg .

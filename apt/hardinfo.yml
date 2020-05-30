@@ -1,0 +1,20 @@
+app: hardinfo
+binpatch: true
+
+ingredients:
+  dist: focal
+  sources: 
+    - deb http://archive.ubuntu.com/ubuntu/ focal main universe
+
+script:
+  - cat > hardinfo.desktop <<\EOF
+  - [Desktop Entry]
+  - Categories=Utility;GTK;
+  - Comment=Informação do sistema
+  - Exec=hardinfo
+  - Icon=hardinfo
+  - Name=Informação
+  - StartupNotify=false
+  - Type=Application
+  - EOF
+  - cp ../../../../apps/receitas/hardinfo.png .

@@ -1,0 +1,34 @@
+app: wps-office-full
+ingredients:
+  script:
+    - wget -qO - "https://winunix.github.io/debian/public.key" | sudo apt-key add -
+    - echo "deb https://winunix.github.io/debian focal main" | sudo tee /etc/apt/sources.list.d/winunix-focal.list
+  dist: focal
+  sources: 
+    - deb http://archive.ubuntu.com/ubuntu/ focal main universe
+    - deb https://winunix.github.io/debian focal main
+script:
+  - cat > wps-office-prometheus.desktop <<\EOF
+  - [Desktop Entry]
+  - Categories=Office;WordProcessor;Qt;
+  - Comment=Aplicativos para Escritório
+  - Exec=wpsproxy %F
+  - Icon=wps-office2019-kprometheus
+  - Name=WPS 2019
+  - StartupNotify=false
+  - Type=Application
+  - EOF
+#  - sudo apt-get install -y fonts-3rd-party
+#  - cp usr/share/applications/wps-office-prometheus.desktop .
+  - cp ../../../../apps/receitas/wps-office2019-kprometheus.svg .
+  - rm -Rf usr/bin
+  - cp ../../../../apps/receitas/wps_bin.tar.gz .
+  - tar -vzxf wps_bin.tar.gz
+  - mkdir usr/bin
+  - cp etx usr/bin/
+  - cp wppx usr/bin/
+  - cp wpsx usr/bin/
+  - cp wpspdf usr/bin/
+  - cp wpsproxy usr/bin/
+  - rm -Rf tmp
+  - rm -Rf etx wppx wpsx wpspdf wpsproxy

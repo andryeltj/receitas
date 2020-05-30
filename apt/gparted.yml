@@ -1,0 +1,20 @@
+app: gparted
+binpatch: true
+
+ingredients:
+  dist: focal
+  sources: 
+    - deb http://archive.ubuntu.com/ubuntu/ focal main universe
+
+script:
+  - cat > gparted.desktop <<\EOF
+  - [Desktop Entry]
+  - Categories=System;GTK;
+  - Comment=Manipular os particionamentos dos discos
+  - Exec=gparted
+  - Icon=gparted
+  - Name=Editor de partições
+  - StartupNotify=false
+  - Type=Application
+  - EOF
+  - cp ../../../../apps/receitas/gparted.png .

@@ -1,0 +1,20 @@
+app: gdmap
+binpatch: true
+
+ingredients:
+  dist: focal
+  sources: 
+    - deb http://archive.ubuntu.com/ubuntu/ focal main universe
+
+script:
+  - cat > gdmap.desktop <<\EOF
+  - [Desktop Entry]
+  - Categories=Utility;GTK;
+  - Comment=Proporção dos arquivos na pasta
+  - Exec=gdmap
+  - Icon=gdmap
+  - Name=Arquivos
+  - StartupNotify=false
+  - Type=Application
+  - EOF
+  - cp ../../../../media/usuario/E52C-96D1/receitas/gdmap.png .

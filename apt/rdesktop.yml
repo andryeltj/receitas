@@ -1,0 +1,22 @@
+app: rdesktop
+binpatch: true
+
+ingredients:
+  package: libglade2-0 rdesktop
+  dist: focal
+  sources: 
+    - deb http://archive.ubuntu.com/ubuntu/ focal main universe
+
+script:
+  - cat > mstsc.desktop <<\EOF
+  - [Desktop Entry]
+  - Categories=Network;GTK;
+  - Comment=Acesso Remoto
+  - Exec=mstsc
+  - Icon=mstsc
+  - Name=Acesso Remoto
+  - StartupNotify=false
+  - Type=Application
+  - EOF
+  - cp ../../../../apps/receitas/mstsc.png .
+  - cp ../../../../usr/bin/mstsc ./usr/bin/

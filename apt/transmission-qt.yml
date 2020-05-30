@@ -1,0 +1,27 @@
+app: transmission-qt
+binpatch: true
+
+ingredients:
+  script:
+    - rm -Rf *.deb
+    - wget http://fr.archive.ubuntu.com/ubuntu/pool/universe/t/transmission/transmission-qt_2.94-2ubuntu3_amd64.deb
+    - wget http://fr.archive.ubuntu.com/ubuntu/pool/main/t/transmission/transmission-common_2.94-2ubuntu3_all.deb
+    - wget http://fr.archive.ubuntu.com/ubuntu/pool/main/m/miniupnpc/libminiupnpc17_2.1.20190824-0ubuntu2_amd64.deb
+    - wget http://fr.archive.ubuntu.com/ubuntu/pool/main/libn/libnatpmp/libnatpmp1_20150609-7build1_amd64.deb
+    - wget http://fr.archive.ubuntu.com/ubuntu/pool/main/libe/libevent/libevent-2.1-7_2.1.11-stable-1_amd64.deb
+  dist: focal
+  sources: 
+    - deb http://archive.ubuntu.com/ubuntu/ focal main universe
+
+script:
+  - cat > transmission-qt.desktop <<\EOF
+  - [Desktop Entry]
+  - Categories=Utility;GTK;
+  - Comment=Baixar por meio de torrents
+  - Exec=transmission-qt
+  - Icon=transmission-qt
+  - Name=Torrents
+  - StartupNotify=false
+  - Type=Application
+  - EOF
+  - cp ../../../../apps/receitas/transmission-qt.svg .

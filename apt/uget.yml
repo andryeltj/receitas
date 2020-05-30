@@ -1,0 +1,20 @@
+app: uget
+binpatch: true
+
+ingredients:
+  dist: focal
+  sources: 
+    - deb http://archive.ubuntu.com/ubuntu/ focal main universe
+
+script:
+  - cat > aisleriot.desktop <<\EOF
+  - [Desktop Entry]
+  - Categories=Utility;GTK;
+  - Comment=Baixar da Internet
+  - Exec=uget-gtk %u
+  - Icon=uget
+  - Name=Baixar...
+  - StartupNotify=false
+  - Type=Application
+  - EOF
+  - cp ../../../../media/usuario/E52C-96D1/receitas/uget.svg .

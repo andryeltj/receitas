@@ -1,0 +1,21 @@
+app: simple-scan
+binpatch: true
+
+ingredients:
+  package: simple-scan
+  dist: focal
+  sources: 
+    - deb http://archive.ubuntu.com/ubuntu/ focal main universe
+
+script:
+  - cat > simple-scan.desktop <<\EOF
+  - [Desktop Entry]
+  - Categories=Utility;GTK;
+  - Comment=Scaneie documetos facilmente
+  - Exec=simple-scan
+  - Icon=org.gnome.SimpleScan
+  - Name=Scanner
+  - StartupNotify=false
+  - Type=Application
+  - EOF
+  - cp ./usr/share/icons/hicolor/scalable/apps/org.gnome.SimpleScan.svg .

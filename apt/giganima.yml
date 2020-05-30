@@ -1,0 +1,20 @@
+app: npm
+binpatch: true
+
+ingredients:
+  package: nodejs npm
+  dist: focal
+  sources: 
+    - deb http://fr.archive.ubuntu.com/ubuntu/ focal main universe  
+
+script:
+  - cp ../../../../apps/receitas/giganima.png .
+  - cp ../../../../apps/receitas/nucleos/giganima.desktop .
+  - cp ../../../../apps/receitas/nucleos/giganima-linux-x64.tar.xz ./usr/share
+  - cd ./usr/share/
+  - tar -Jxf giganima-linux-x64.tar.xz
+  - rm -Rf giganima-linux-x64.tar.xz
+  - cd .
+#  - cp ./usr/share/giganima-linux-x64/resources/app/icon.png .
+
+#    - nativefier --name "giganima" https://giganima.tk/.

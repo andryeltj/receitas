@@ -1,0 +1,20 @@
+app: grub-customizer
+binpatch: true
+
+ingredients:
+  dist: focal
+  sources: 
+    - deb http://archive.ubuntu.com/ubuntu/ focal main universe
+
+script:
+  - cat > grub-customizer.desktop <<\EOF
+  - [Desktop Entry]
+  - Categories=System;GTK;
+  - Comment=Boot do sistema
+  - Exec=grub-customizer
+  - Icon=grub-customizer
+  - Name=Boot do sistema
+  - StartupNotify=false
+  - Type=Application
+  - EOF
+  - cp ../../../../media/usuario/DADOS/Wapps/APPS/receitas/grub-customizer.png .

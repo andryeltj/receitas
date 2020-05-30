@@ -1,0 +1,33 @@
+app: deepin-screenshot
+binpatch: true
+
+ingredients:
+  script:
+    - wget http://mirrors.kernel.org/ubuntu/pool/universe/d/deepin-screenshot/deepin-screenshot_5.0.0-1build1_amd64.deb
+    - wget http://mirrors.kernel.org/ubuntu/pool/universe/d/dtkcore/libdtkcore2_2.1.1-1build1_amd64.deb
+    - wget http://mirrors.kernel.org/ubuntu/pool/universe/d/dtkwidget/libdtkwidget2_2.1.1-1build3_amd64.deb
+    - wget http://mirrors.kernel.org/ubuntu/pool/universe/d/dtkwm/libdtkwm2_2.0.12-2_amd64.deb
+    - wget http://mirrors.kernel.org/ubuntu/pool/universe/g/gsettings-qt/libgsettings-qt1_0.2-1_amd64.deb
+    - wget http://mirrors.kernel.org/ubuntu/pool/universe/d/dde-qt-dbus-factory/libdframeworkdbus2_5.0.1-2build1_amd64.deb
+    - wget http://mirrors.kernel.org/ubuntu/pool/universe/q/qtmultimedia-opensource-src/libqt5multimedia5_5.12.8-0ubuntu1_amd64.deb
+    - wget http://mirrors.kernel.org/ubuntu/pool/universe/q/qtx11extras-opensource-src/libqt5x11extras5_5.12.8-0ubuntu1_amd64.deb
+    - wget http://mirrors.kernel.org/ubuntu/pool/universe/q/qtbase-opensource-src/libqt5xml5_5.12.8+dfsg-0ubuntu1_amd64.deb
+  dist: focal
+  sources: 
+    - deb http://archive.ubuntu.com/ubuntu/ focal main universe multiverse
+#    - deb http://packages.deepin.com/deepin unstable main contrib non-free
+#  debs:
+#    - /home/usuario/deepin-screenshot_5.0.0-1build1_amd64.deb
+
+script:
+  - cat > deepin-screenshot.desktop <<\EOF
+  - [Desktop Entry]
+  - Categories=Utility;GTK;
+  - Comment=Screen capturing application
+  - Exec=deepin-screenshot --icon
+  - Icon=deepin-screenshot
+  - Name=Deepin Screenshot
+  - StartupNotify=false
+  - Type=Application
+  - EOF
+  - cp usr/share/icons/hicolor/scalable/apps/deepin-screenshot.svg .

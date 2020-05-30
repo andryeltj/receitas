@@ -1,0 +1,47 @@
+app: celluloid
+binpatch: true
+
+ingredients:
+  script:
+#    - rm -Rf *.deb
+#    - wget http://fr.archive.ubuntu.com/ubuntu/pool/universe/c/celluloid/celluloid_0.18-2build1_amd64.deb
+#    - wget http://fr.archive.ubuntu.com/ubuntu/pool/universe/m/mpv/libmpv1_0.32.0-1ubuntu1_amd64.deb
+#    - wget http://fr.archive.ubuntu.com/ubuntu/pool/universe/libs/libsdl2/libsdl2-2.0-0_2.0.10+dfsg1-3_amd64.deb
+#    - wget http://fr.archive.ubuntu.com/ubuntu/pool/universe/s/sndio/libsndio7.0_1.5.0-3_amd64.deb
+#    - wget http://fr.archive.ubuntu.com/ubuntu/pool/main/l/lua5.2/liblua5.2-0_5.2.4-1.1build3_amd64.deb
+#    - wget http://fr.archive.ubuntu.com/ubuntu/pool/universe/libd/libdvdnav/libdvdnav4_6.0.1-1build1_amd64.deb
+#    - wget http://fr.archive.ubuntu.com/ubuntu/pool/universe/libv/libva/libva-wayland2_2.7.0-2_amd64.deb
+#    - wget http://fr.archive.ubuntu.com/ubuntu/pool/universe/f/ffmpeg/libavdevice58_4.2.2-1ubuntu1_amd64.deb
+#    - wget http://fr.archive.ubuntu.com/ubuntu/pool/universe/libd/libdvdread/libdvdread7_6.1.0+really6.0.2-1_amd64.deb
+#    - wget http://fr.archive.ubuntu.com/ubuntu/pool/universe/o/openal-soft/libopenal1_1.19.1-1_amd64.deb
+#    - wget http://fr.archive.ubuntu.com/ubuntu/pool/universe/libd/libdc1394-22/libdc1394-22_2.2.5-2.1_amd64.deb
+
+#    - wget http://security.ubuntu.com/ubuntu/pool/main/s/samba/libsmbclient_4.11.6+dfsg-0ubuntu1.1_amd64.deb
+#    - wget http://fr.archive.ubuntu.com/ubuntu/pool/universe/liba/libass/libass9_0.14.0-2_amd64.deb
+#    - wget http://security.ubuntu.com/ubuntu/pool/main/s/samba/samba-libs_4.11.6+dfsg-0ubuntu1.1_amd64.deb
+#    - wget http://security.ubuntu.com/ubuntu/pool/main/s/samba/libwbclient0_4.11.6+dfsg-0ubuntu1.1_amd64.deb
+#    - wget 
+#    - wget 
+#    - wget 
+#    - wget 
+#    - wget 
+#    - wget 
+#    - wget 
+#    - wget 
+  dist: focal
+  sources: 
+    - deb http://archive.ubuntu.com/ubuntu/ focal main universe
+
+script:
+  - cat > celluloid.desktop <<\EOF
+  - [Desktop Entry]
+  - Categories=AudioVideo;GTK;
+  - Comment=Reprodutor VLC
+  - Exec=celluloid %U
+  - Icon=celluloid
+  - Name=Media Player
+  - StartupNotify=false
+  - Type=Application
+  - EOF
+  - cp ../../../../apps/receitas/celluloid.svg .
+  - rm -Rf io.github.celluloid_player.Celluloid.desktop

@@ -1,0 +1,19 @@
+app: gnome-paint
+binpatch: true
+
+ingredients:
+  dist: focal
+  sources: 
+    - deb http://archive.ubuntu.com/ubuntu/ focal main universe
+
+script:
+  - cat > gnome-paint.desktop <<\EOF
+  - [Desktop Entry]
+  - Categories=Utility;GTK;
+  - Comment=Paint
+  - Exec=gp
+  - Icon=gp
+  - Name=Paint
+  - StartupNotify=false
+  - Type=Application
+  - EOF

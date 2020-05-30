@@ -1,0 +1,19 @@
+app: galculator
+binpatch: true
+
+ingredients:
+  dist: focal
+  sources: 
+    - deb http://archive.ubuntu.com/ubuntu/ focal main universe
+
+script:
+  - cat > calculator.desktop <<\EOF
+  - [Desktop Entry]
+  - Categories=Utility;GTK;
+  - Comment=Seletor de cores
+  - Exec=galculator
+  - Icon=calc
+  - Name=Calculadora
+  - StartupNotify=false
+  - Type=Application
+  - EOF

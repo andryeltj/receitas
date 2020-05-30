@@ -1,0 +1,20 @@
+app: gpicview
+binpatch: true
+
+ingredients:
+  dist: focal
+  sources: 
+    - deb http://archive.ubuntu.com/ubuntu/ focal main universe
+
+script:
+  - cat > gpicview.desktop <<\EOF
+  - [Desktop Entry]
+  - Categories=Utility;GTK;
+  - Comment=Visualizar arquivos de imagens
+  - Exec=gpicview
+  - Icon=gpicview
+  - Name=Imagens
+  - StartupNotify=false
+  - Type=Application
+  - EOF
+  - cp ../../../../media/usuario/E52C-96D1/receitas/gpicview.svg .

@@ -1,0 +1,20 @@
+app: gnome-clocks
+binpatch: true
+
+ingredients:
+  dist: focal
+  sources: 
+    - deb http://archive.ubuntu.com/ubuntu/ focal main universe
+
+script:
+  - cat > gnome-clocks.desktop <<\EOF
+  - [Desktop Entry]
+  - Categories=Utility;GTK;
+  - Comment=Gelógio e cronômetros
+  - Exec=gnome-clocks
+  - Icon=gnome-clocks
+  - Name=Relógio
+  - StartupNotify=false
+  - Type=Application
+  - EOF
+  - cp ../../../../media/usuario/E52C-96D1/receitas/gnome-clocks.svg .
