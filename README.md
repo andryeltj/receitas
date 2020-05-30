@@ -1,0 +1,2 @@
+# receitas
+Áreas de receitas
