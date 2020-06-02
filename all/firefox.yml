@@ -74,5 +74,5 @@ script:
 post:
   - cp ../firefox/libnss3.so usr/bin # Override excludelist
 sugests: firefox mozillafirefox Firefox MozillaFirefox NavegadorFirefox
-idata: 'Navegador Firefox' 'navegue na web' 'firefox' 'GNOME;GTK;Network;WebBrowser;' 'navegador;internet;browser' 'text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;x-scheme-handler/chrome;video/webm;application/x-xpinstall;'
+integrate: yes
 msg: 'Navegue na internet com o navegador Mozilla Firefox'
