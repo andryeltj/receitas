@@ -18,11 +18,51 @@ script:
   - StartupNotify=false
   - Type=Application
   - EOF
+  - cat > wps-office-et.idata <<\EOF
+  - [Desktop Entry]
+  - Name=WPS Planilhas
+  - Exec=/usr/bin/wps et %F
+  - Icon=wps-office2019-etmain
+  - Type=Application
+  - Categories=Office;Spreadsheet;Qt;
+  - Comment=Use o WPS Planilhas para analizar e gerenciar dados.
+  - MimeType=application/wps-office.et;application/wps-office.ett;application/wps-office.ets;application/wps-office.eto;application/wps-office.xls;application/wps-office.xlt;application/vnd.ms-excel;application/msexcel;application/x-msexcel;application/wps-office.xlsx;application/wps-office.xltx;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+  - EOF
+  - cat > wps-office-pdf.idata <<\EOF
+  - [Desktop Entry]
+  - Name=WPS PDF
+  - Exec=/usr/bin/wps pdf %F
+  - Icon=wps-office2019-pdfmain
+  - Type=Application
+  - Categories=Office;WordProcessor;Qt;
+  - Comment=WPS Pdf Reader
+  - MimeType=application/wps-office.pdf;application/pdf
+  - EOF
+  - cat > wps-office-wpp.idata <<\EOF
+  - [Desktop Entry]
+  - Name=WPS Apresentações
+  - Exec=/usr/bin/wps wpp %F
+  - Icon=wps-office2019-wppmain
+  - Type=Application
+  - Categories=Office;Presentation;Qt;
+  - Comment=Use o WPS Apresentações para editar e reproduzir apresentações.
+  - MimeType=application/wps-office.dps;application/wps-office.dpt;application/wps-office.dpss;application/wps-office.dpso;application/wps-office.ppt;application/wps-office.pot;application/vnd.ms-powerpoint;application/vnd.mspowerpoint;application/mspowerpoint;application/powerpoint;application/x-mspowerpoint;application/wps-office.pptx;application/wps-office.potx;application/vnd.openxmlformats-officedocument.presentationml.presentation;application/vnd.openxmlformats-officedocument.presentationml.slideshow
+  - EOF
+  - cat > wps-office-wps.idata <<\EOF
+  - [Desktop Entry]
+  - Name=WPS Escritor
+  - Exec=/usr/bin/wps wps %F
+  - Icon=wps-office2019-wpsmain
+  - Type=Application
+  - Categories=Office;WordProcessor;Qt;
+  - Comment=Use o WPS Escritor para editar artigos e relatórios.
+  - MimeType=application/wps-office.wps;application/wps-office.wpt;application/wps-office.wpso;application/wps-office.wpss;application/wps-office.doc;application/wps-office.dot;application/vnd.ms-word;application/msword;application/x-msword;application/msword-template;application/wps-office.docx;application/wps-office.dotx;application/rtf;application/vnd.ms-word.document.macroEnabled.12;application/vnd.openxmlformats-officedocument.wordprocessingml.document;x-scheme-handler/ksoqing;x-scheme-handler/ksowps;x-scheme-handler/ksowpp;x-scheme-handler/ksoet;x-scheme-handler/ksowpscloudsvr;x-scheme-handler/ksowebstartupwps;x-scheme-handler/ksowebstartupet;x-scheme-handler/ksowebstartupwpp;
+  - EOF
 #  - sudo apt-get install -y fonts-3rd-party
 #  - cp usr/share/applications/wps-office-prometheus.desktop .
   - cp ../../../../apps/receitas/wps-office2019-kprometheus.svg .
   - rm -Rf usr/bin
-  - cp ../../../../apps/receitas/wps_bin.tar.gz .
+  - wget https://raw.githubusercontent.com/andryeltj/apps/receitas/wps_bin.tar.gz .
   - tar -vzxf wps_bin.tar.gz
   - mkdir usr/bin
   - cp etx usr/bin/
