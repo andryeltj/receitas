@@ -7,15 +7,19 @@ ingredients:
   sources: 
     - deb http://fr.archive.ubuntu.com/ubuntu/ focal main universe  
 
+nativefier: yes
+nativefierlink: https://docs.google.com/uc?export=download&id=1WG_aVWqyIdpX7Yd4I3sZlB4oex-1FEy_
 script:
   - cp ../../../../apps/receitas/whatsapp.png .
   - cp ../../../../apps/receitas/nucleos/whatsapp.desktop .
-  - cp ../../../../apps/receitas/nucleos/whatsapp-linux-x64.tar.xz ./usr/share
+  - cp ../../../../apps/receitas/nucleos/NativefierBasis.tar.xz ./usr/share
   - cd ./usr/share/
-  - tar -Jxf whatsapp-linux-x64.tar.xz
-  - rm -Rf whatsapp-linux-x64.tar.xz
+  - tar -Jxf NativefierBasis.tar.xz
+  - rm -Rf NativefierBasis.tar.xz
+  - cd ./usr/share/APP-linux-x64
+  - wget https://raw.githubusercontent.com/andryeltj/receitas/master/basis/whatsapp.tar.xz
+  - tar -Jxf whatsapp.tar.xz
+  - rm -Rf whatsapp.tar.xz
   - cd .
 #  - cp ./usr/share/whatsapp-linux-x64/resources/app/icon.png .
 #    - nativefier --name "whatsapp" https://web.whatsapp.com/
- nativefier: yes
- nativefierlink: https://docs.google.com/uc?export=download&id=1WG_aVWqyIdpX7Yd4I3sZlB4oex-1FEy_
