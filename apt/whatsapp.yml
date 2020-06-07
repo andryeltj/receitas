@@ -18,4 +18,4 @@ script:
 #  - cp ./usr/share/whatsapp-linux-x64/resources/app/icon.png .
 #    - nativefier --name "whatsapp" https://web.whatsapp.com/
  nativefier: yes
- nativefierlink: https://drive.google.com/file/d/1WG_aVWqyIdpX7Yd4I3sZlB4oex-1FEy_/view?usp=sharing
+ nativefierlink: https://docs.google.com/uc?export=download&id=1WG_aVWqyIdpX7Yd4I3sZlB4oex-1FEy_
