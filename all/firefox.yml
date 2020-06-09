@@ -62,6 +62,9 @@ script:
   - EOF
   - wget -c "https://raw.githubusercontent.com/andryeltj/receitas/master/basis/Firefox_mozilla.cfg" -O usr/bin/mozilla.cfg
   - wget -c "https://raw.githubusercontent.com/AppImage/AppImages/master/recipes/Firefox_00_admin-prefs.js" -O usr/bin/defaults/pref/00_admin-prefs.js
+  - cat > icons.aio <<\EOF
+  - https://raw.githubusercontent.com/andryeltj/apps/receitas/master/icons/firefox.svg
+  - EOF
   # - rm usr/bin/browser/blocklist.xml # Contains app.update. settings; maybe this helps to disable the nag screens
   - cat > AppRun <<\EOF
   - #!/bin/bash
