@@ -1,0 +1,23 @@
+app: dconf-editor
+binpatch: true
+
+ingredients:
+  package: dconf dconf-editor
+  dist: focal
+  sources: 
+    - deb http://archive.ubuntu.com/ubuntu/ focal main universe
+
+script:
+  - rm -Rf ca.desrt.dconf-editor.desktop 
+  - cat > dconf-editor.desktop <<\EOF
+  - [Desktop Entry]
+  - Categories=GTK;System;
+  - Comment=Editor de registros
+  - Exec=dconf-editor
+  - Icon=dconf-editor
+  - Name=dconf-editor
+  - Keywords=settings;configuration;
+  - StartupNotify=false
+  - Type=Application
+  - EOF
+  - wget https://raw.githubusercontent.com/andryeltj/receitas/master/icons/dconf-editor.png
