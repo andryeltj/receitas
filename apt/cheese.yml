@@ -1,0 +1,32 @@
+app: cheese
+binpatch: true
+
+ingredients:
+  package: cheese cheese-common libcheese-gtk25
+  script:
+    - if [ -e "cheese_3.34.0-1build1_amd64.deb" ]; then a=a; else wget http://fr.archive.ubuntu.com/ubuntu/pool/main/c/cheese/cheese_3.34.0-1build1_amd64.deb; fi
+    - if [ -e "cheese-common_3.34.0-1build1_all.deb" ]; then a=a; else wget http://fr.archive.ubuntu.com/ubuntu/pool/main/c/cheese/cheese-common_3.34.0-1build1_all.deb; fi
+    - if [ -e "libcheese-gtk25_3.34.0-1build1_amd64.deb" ]; then a=a; else wget http://fr.archive.ubuntu.com/ubuntu/pool/main/c/cheese/libcheese-gtk25_3.34.0-1build1_amd64.deb;fi
+ #   - if [ -e "" ]; then a=a; else ;fi
+ #   - if [ -e "" ]; then a=a; else ;fi
+ #   - if [ -e "" ]; then a=a; else ;fi
+ #   - if [ -e "" ]; then a=a; else ;fi
+  dist: focal
+  sources: 
+    - deb http://archive.ubuntu.com/ubuntu/ focal main universe
+
+script:
+  - cat > cheese.desktop <<\EOF
+  - [Desktop Entry]
+  - Categories=Utility;GTK;
+  - Comment=Webcam
+  - Exec=cheese
+  - Icon=webcam
+  - Name=WebCam
+  - StartupNotify=false
+  - Keywords=photo;video;webcam;
+  - Type=Application
+  - EOF
+  - rm -Rf org.gnome.Cheese.desktop
+  - https://raw.githubusercontent.com/andryeltj/apps/receitas/master/icons/webcam.svg
+  - 
