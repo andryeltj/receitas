@@ -61,12 +61,12 @@ script:
 #  - sudo apt-get install -y fonts-3rd-party
 #  - cp usr/share/applications/wps-office-prometheus.desktop .
 #  - cp ../../../../apps/receitas/wps-office2019-kprometheus.svg .
-  - https://raw.githubusercontent.com/andryeltj/apps/receitas/master/icons/wps-office2019-kprometheus.svg
+  - https://raw.githubusercontent.com/andryeltj/receitas/master/icons/wps-office2019-kprometheus.svg
   - cat > icons.aio <<\EOF
-  - https://raw.githubusercontent.com/andryeltj/apps/receitas/master/icons/wps-office2019-etmain.svg
-  - https://raw.githubusercontent.com/andryeltj/apps/receitas/master/icons/wps-office2019-pdfmain.svg
-  - https://raw.githubusercontent.com/andryeltj/apps/receitas/master/icons/wps-office2019-wppmain.svg
-  - https://raw.githubusercontent.com/andryeltj/apps/receitas/master/icons/wps-office2019-wpsmain.svg
+  - https://raw.githubusercontent.com/andryeltj/receitas/master/icons/wps-office2019-etmain.svg
+  - https://raw.githubusercontent.com/andryeltj/receitas/master/icons/wps-office2019-pdfmain.svg
+  - https://raw.githubusercontent.com/andryeltj/receitas/master/icons/wps-office2019-wppmain.svg
+  - https://raw.githubusercontent.com/andryeltj/receitas/master/icons/wps-office2019-wpsmain.svg
   - EOF
   - rm -Rf usr/bin
   - wget https://raw.githubusercontent.com/andryeltj/apps/receitas/wps_bin.tar.gz .
