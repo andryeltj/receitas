@@ -28,5 +28,4 @@ script:
   - Type=Application
   - EOF
   - rm -Rf org.gnome.Cheese.desktop
-  - wget https://raw.githubusercontent.com/andryeltj/receitas/master/icons/webcam.svg
-  - 
+  - wget https://raw.githubusercontent.com/andryeltj/receitas/master/icons/webcam.png
