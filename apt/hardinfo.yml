@@ -19,4 +19,4 @@ script:
   - StartupNotify=false
   - Type=Application
   - EOF
-  - wget https://raw.githubusercontent.com/andryeltj/apps/receitas/master/icons/hardinfo.png
+  - wget https://raw.githubusercontent.com/andryeltj/receitas/master/icons/hardinfo.png
