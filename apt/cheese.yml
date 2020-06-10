@@ -22,7 +22,7 @@ script:
   - Comment=Webcam
   - Exec=cheese
   - Icon=webcam
-  - Name=WebCam
+  - Name=cheese
   - StartupNotify=false
   - Keywords=photo;video;webcam;
   - Type=Application
