@@ -2,19 +2,21 @@ app: hardinfo
 binpatch: true
 
 ingredients:
+  package: hardinfo
   dist: focal
   sources: 
     - deb http://archive.ubuntu.com/ubuntu/ focal main universe
 
 script:
-  - cat > hardinfo.desktop <<\EOF
+  - rm -Rf hairdinfo.desktop 
+  - cat > hairdinfo.desktop <<\EOF
   - [Desktop Entry]
   - Categories=Utility;GTK;
-  - Comment=Informação do sistema
+  - Comment=Informações do sistema
   - Exec=hardinfo
   - Icon=hardinfo
-  - Name=Informação
+  - Name=hardinfo
   - StartupNotify=false
   - Type=Application
   - EOF
-  - cp ../../../../apps/receitas/hardinfo.png .
+  - https://raw.githubusercontent.com/andryeltj/apps/receitas/master/icons/hardinfo.png
