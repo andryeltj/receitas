@@ -1,0 +1,34 @@
+app: seamonkey
+ingredients:
+  script:
+    - URL1=https://archive.mozilla.org/pub/seamonkey/releases/2.53.2/linux-x86_64/pt-BR/seamonkey-2.53.2.pt-BR.linux-x86_64.tar.bz2
+#    - URL1=http://ftp.mozilla.org/pub/seamonkey/releases/2.9.1/contrib/seamonkey-2.9.1.en-US.linux-x86_64.tar.bz2
+#    - URL2=https://ftp.mozilla.org/pub/seamonkey/releases/2.9.1/langpack/seamonkey-2.9.1.pt-PT.langpack.xpi
+    - wget -q --show-progress -c $URL1
+    #$URL2
+script:
+#  - wget -q --show-progress -c $URL1
+  - mkdir ./opt
+#  - tar -xjvf ../seamonkey-2.9.1.en-US.linux-x86_64.tar.bz2 -C ./opt/
+  - tar -xjvf ../seamonkey-2.53.2.pt-BR.linux-x86_64.tar.bz2 -C ./opt/
+  - ln -sf ./opt/seamonkey/seamonkey ./usr/bin/seamonkey
+  - cat > seamonkey.desktop <<EOF
+  - [Desktop Entry]
+  - Version=1.0
+  - Name=seamonkey
+  - Exec=/opt/seamonkey/seamonkey
+  - Icon=seamonkey
+  - Type=Application
+  - Categories=Network;
+  - EOF
+  - mkdir -p ./usr/bin/browser/extensions/
+#  - cp ../seamonkey-2.9.1.pt-PT.langpack.xpi ./usr/bin/browser/extensions/seamonkey-2.9.1.pt-PT.langpack.xpi
+  - cp ./opt/seamonkey/chrome/icons/default/main-window48.png ./seamonkey.png
+  - cat > AppRun <<\EOF
+  - #!/bin/bash
+  - HERE="$(dirname "$(readlink -f "${0}")")"
+  - "$HERE/opt/seamonkey/seamonkey" "$@"
+  - EOF
+  - chmod a+x AppRun
+post:
+  - cp ../seamonkey/libnss3.so ./usr/bin
