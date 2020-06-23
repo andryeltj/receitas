@@ -1,0 +1,35 @@
+app: palemoon
+binpatch: true
+
+ingredients:
+  dist: focal
+  package: palemoon
+  script:
+    - LINGUA=cat ~/.config/user-dirs.locale | sed "s/_/-/g"
+    - wget -q --show-progress -c "http://addons.palemoon.org/index.html?component=download&id=darkmoon@lootyhoof-pm&version=2.5.0" -O darkmoon@lootyhoof-pm.xpi
+    - wget -q --show-progress -c "http://addons.palemoon.org/index.html?component=download&id=langpack-${LINGUA}@palemoon.org&version=28.10.0" -O langpack-${LINGUA}@palemoon.org.xpi
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu/ focal main universe
+    - deb http://download.opensuse.org/repositories/home:/stevenpusser/xUbuntu_20.04/ /
+
+script:
+  - eXPI=./usr/bin/browser/extensions
+  - cp ../darkmoon@lootyhoof-pm.xpi $eXPI/darkmoon@lootyhoof-pm.xpi
+  - cp ../langpack-${LINGUA}@palemoon.org.xpi $eXPI/langpack-${LINGUA}@palemoon.org.xpi
+  - cat > ./usr/bin/palemoon.cfg <<\EOF
+  - pref("browser.tabs.onTop", true);
+  - pref("general.useragent.locale", "pt-BR");
+  - pref("intl.accept_languages", "pt-BR, pt, en-US, en");
+  - pref("browser.bookmarks.restore_default_bookmarks", false)
+  - pref("general.skins.selectedSkin", darkmoon)
+  - EOF
+  - cat > palemoon.desktop <<\EOF
+  - [Desktop Entry]
+  - Categories=Network;GTK;
+  - Comment=Navegador Web
+  - Exec=palemoon
+  - Icon=palemoon
+  - Name=palemmon
+  - StartupNotify=false
+  - Type=Application
+  - EOF
