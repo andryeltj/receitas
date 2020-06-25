@@ -1,28 +1,28 @@
 app: esDaily
 script:
-  - git clone https://github.com/andryeltj/esConky
-  - CONKYDIR=$CAMINHO/.config/conky
-  - STARTDIR=$CAMINHO/.config/autostart
-  - ESCONKY=$CONKYDIR/esConky
-  - ESDAILY=$CONKYDIR/esDaily
+    - git clone https://github.com/andryeltj/esConky
+    - CONKYDIR=$CAMINHO/.config/conky
+    - STARTDIR=$CAMINHO/.config/autostart
+    - ESCONKY=$CONKYDIR/esConky
+    - ESDAILY=$CONKYDIR/esDaily
 
-  - if [ -e $ESCONKY ]; then rm -Rf $ESCONKY; fi
-  - if [ -e $ESDAILY ]; then rm -Rf $ESDAILY; fi
-  - if [ -e $ESSTART ]; then rm $ESSTART/TextoDiario.desktop; fi
+    - if [ -e $ESCONKY ]; then rm -Rf $ESCONKY; fi
+    - if [ -e $ESDAILY ]; then rm -Rf $ESDAILY; fi
+    - if [ -e $ESSTART ]; then rm $ESSTART/TextoDiario.desktop; fi
 
-  - cat > TextoDiario.desktop << /EOF
-  - #!/usr/bin/env xdg-open
-  - [Desktop Entry]
-  - Type=Application
-  - Name=TextoDiario
-  - Comment=Exibe o Texto diario na Área de Trabalho
-  - Exec=conky -c $CAMINHO/.config/conky/esDaily/daily
-  - OnlyShowIn=XFCE;
-  - Terminal=false
-  - Hidden=false
-  - EOF
+    - cat > TextoDiario.desktop << /EOF
+    - #!/usr/bin/env xdg-open
+    - [Desktop Entry]
+    - Type=Application
+    - Name=TextoDiario
+    - Comment=Exibe o Texto diario na Área de Trabalho
+    - Exec=conky -c $CAMINHO/.config/conky/esDaily/daily
+    - OnlyShowIn=XFCE;
+    - Terminal=false
+    - Hidden=false
+    - EOF
 
-  - mkdir $ESDAILY
-  - cp TextoDiario.desktop $STARTDIR
-  - cp esConky/*.* $ESDAILY
-  - chmod +x daily && chmod +x comment.pl && chmod +x daytext.pl
+    - mkdir $ESDAILY
+    - cp TextoDiario.desktop $STARTDIR
+    - cp esConky/*.* $ESDAILY
+    - chmod +x daily && chmod +x comment.pl && chmod +x daytext.pl
