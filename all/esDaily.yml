@@ -1,5 +1,6 @@
 app: esDaily
-script:
+ingredients:
+  script:
     - git clone https://github.com/andryeltj/esConky
     - CONKYDIR=$CAMINHO/.config/conky
     - STARTDIR=$CAMINHO/.config/autostart
