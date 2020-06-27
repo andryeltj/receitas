@@ -17,7 +17,7 @@ ingredients:
     - Type=Application
     - Name=TextoDiario
     - Comment=Exibe o Texto diario na Área de Trabalho
-    - Exec=conky -c $CAMINHO/.config/conky/esDaily/daily
+    - Exec=xterm -e "cd ~/.config/conky/esDaily/ && conky -c daily && exit"
     - OnlyShowIn=XFCE;
     - Terminal=false
     - Hidden=false
