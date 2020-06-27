@@ -1,7 +1,7 @@
 app: esDaily
 ingredients:
   script:
-    - git clone https://github.com/andryeltj/esConky
+    - git clone https://github.com/andryeltj/esDaily
     - CONKYDIR=$CAMINHO/.config/conky
     - STARTDIR=$CAMINHO/.config/autostart
     - ESCONKY=$CONKYDIR/esConky
@@ -25,5 +25,5 @@ ingredients:
 
     - mkdir $ESDAILY
     - cp TextoDiario.desktop $STARTDIR
-    - cp esConky/*.* $ESDAILY
-    - chmod +x daily && chmod +x comment.pl && chmod +x daytext.pl
+    - cp esDaily/*.* $ESDAILY
+    - chmod +x daily && chmod +x head.sh && chmod +x body.sh
