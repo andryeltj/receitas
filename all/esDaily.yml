@@ -17,12 +17,13 @@ ingredients:
     - Type=Application
     - Name=TextoDiario
     - Comment=Exibe o Texto diario na Área de Trabalho
-    - Exec=xterm -e "cd ~/.config/conky/esDaily; conky -c daily; exit"
+    - Exec=xterm -e "cd ~/.config/conky/esDaily A conky -c daily A exit"
     - OnlyShowIn=XFCE;
     - Terminal=false
     - Hidden=false
     - EOF
 
+    - sed -i 's|A|&&|g' TextoDiario.desktop
     - mkdir $ESDAILY
     - cp TextoDiario.desktop $STARTDIR
     - cp esDaily/*.* $ESDAILY
