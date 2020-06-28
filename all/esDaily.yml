@@ -26,7 +26,7 @@ ingredients:
     - sed -i 's|A|&&|g' TextoDiario.desktop
     - mkdir $ESDAILY
     - cp TextoDiario.desktop $STARTDIR
-    - cp esDaily/*.* $ESDAILY
+    - cp -Rf esDaily $CONKYDIR
     - chmod +x daily
     - chmod +x head.sh
     - chmod +x body.sh
