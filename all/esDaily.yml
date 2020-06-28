@@ -26,4 +26,6 @@ ingredients:
     - mkdir $ESDAILY
     - cp TextoDiario.desktop $STARTDIR
     - cp esDaily/*.* $ESDAILY
-    - chmod +x daily && chmod +x head.sh && chmod +x body.sh
+    - chmod +x daily
+    - chmod +x head.sh
+    - chmod +x body.sh
