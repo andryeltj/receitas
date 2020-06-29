@@ -1,3 +1,4 @@
+pkg2appimage: pkg2appimage AppImage/AppImages/master
 cheese: cheese andryeltj/receitas/master/apt Q2hlZXNlIGlzIGEgcHJvZ3JhbSBmb3IgdGhlIEdOT01FIERlc2t0b3Agd2hpY2ggYWxsb3dzIHlvdSB0byB0YWtlIHBob3RvcywgdmlkZW9zLCBhbmQgYW55dGhpbmcgZWxzZSB5b3UgY2FuIHRoaW5rIG9mIHdpdGggeW91ciB3ZWJjYW0uIA==
 dconf-editor: dconf-editor andryeltj/receitas/master/apt RWRpdG9yIGRlIHJlZ2lzdHJvcyBkbyBkY29uZg==
 esdaily:  esDaily  andryeltj/receitas/master/all VGV4dG8gZGnDoXJpbyBhdHJhdsOpeiBkbyBjb25reQ
