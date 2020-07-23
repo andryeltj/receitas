@@ -1,0 +1,22 @@
+app: zoom
+binpatch: true
+ingredients:
+  script:
+    - wget -c https://zoom.us/client/latest/zoom_x86_64.tar.xz
+script:
+  - mkdir opt
+  - tar -C ./opt -xvf ../zoom_x86_64.tar.xz
+  - ln -s ./opt/zoom/zoom ./usr/bin/zoom
+  - wget https://img.ibxk.com.br/2020/03/24/24174043879197.jpg -O zoom.png
+
+  - cat > zoom.desktop << /EOF
+  - [Desktop Entry]
+  - Type=Application
+  - Name=Zoom
+  - Exec=zoom %U
+  - Icon=zoom
+  - Categories=Network;
+  - StartupWMClass=Zoom
+  - MimeType=x-scheme-handler/zoommtg;x-scheme-handler/zoomus;x-scheme-handler/tel;x-scheme-handler/callto;x-scheme-handler/zoomphonecall;application/x-zoom;
+  - #X-KDE-Protocols=zoommtg;zoomus;tel;callto;zoomphonecall;
+  - /EOF
