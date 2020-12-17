@@ -47,7 +47,7 @@ case "$(uname -i)" in
   unknown|AuthenticAMD|GenuineIntel)
 #         uname -i not answer on debian, then:
     case "$(uname -m)" in
-      x86_64|arm64|amd64)
+      x86_64|amd64)
 #        echo "x86-64 system architecture"
         SYSTEM_ARCH="x86_64";;
       i?86)
@@ -57,6 +57,23 @@ case "$(uname -i)" in
     esac ;;
   *)
     echo "Unsupported system architecture"
+    exit 1;;
+esac
+case "$(uname -i)" in
+ aarch64|arm64)
+#    echo "x86-64 system architecture"
+    SYSTEM_ARCH="amd64";;
+  i?86)
+    SYSTEM_ARCH="i686";;
+    unknown|Aarch64|Arm64)
+    case "$(uname -m)" in
+      aarch64|arm64)
+        SYSTEM_ARCH="amd64";;
+      i?86)
+        SYSTEM_ARCH="i686";;
+    esac ;;
+  *)
+    echo "Really Unsupported system architecture"
     exit 1;;
 esac
 
