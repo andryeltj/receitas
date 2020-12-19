@@ -41,9 +41,9 @@ case "$(uname -i)" in
   i?86)
 #    echo "x86 system architecture"
     SYSTEM_ARCH="i686";;
-#  arm*)
+  aarch64|arm64)
 #    echo "ARM system architecture"
-#    SYSTEM_ARCH="";;
+    SYSTEM_ARCH="arm64";;
   unknown|AuthenticAMD|GenuineIntel)
 #         uname -i not answer on debian, then:
     case "$(uname -m)" in
@@ -53,30 +53,14 @@ case "$(uname -i)" in
       i?86)
 #        echo "x86 system architecture"
         SYSTEM_ARCH="i686";;
+      aarch64|arm64)
+#        echo "ARM system architecture"
+        SYSTEM_ARCH="arm64";;
     esac ;;
   *)
     echo "Unsupported system architecture, testing if ARM"
-#    exit 1;;
-esac
-case "$(uname -i)" in
- aarch64|arm64)
-#    echo "x86-64 system architecture"
-    SYSTEM_ARCH="arm64";;
-  i?86)
-    SYSTEM_ARCH="i686";;
-    unknown|Aarch64|Arm64)
-    
-    case "$(uname -m)" in
-      aarch64|arm64)
-        SYSTEM_ARCH="arm64";;
-      i?86)
-        SYSTEM_ARCH="i686";;
-    esac ;;
-  *)
-    echo "Really Unsupported system architecture"
     exit 1;;
 esac
-
 # Either get the file from remote or from a static place.
 # critical for builds without network access like in Open Build Service
 cat_file_from_url()
