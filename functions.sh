@@ -56,7 +56,7 @@ case "$(uname -i)" in
     esac ;;
   *)
     echo "Unsupported system architecture, testing if ARM"
-    exit 1;;
+#    exit 1;;
 esac
 case "$(uname -i)" in
  aarch64|arm64)
@@ -203,6 +203,8 @@ generate_appimage()
     if [[ $INFO == *"x86-64"* ]] ; then
       ARCH=x86_64
     elif [[ $INFO == *"arm64"* ]] ; then
+      ARCH=arm64
+    elif [[ $INFO == *"aarch64"* ]] ; then
       ARCH=arm64
     elif [[ $INFO == *"i686"* ]] ; then
       ARCH=i686
