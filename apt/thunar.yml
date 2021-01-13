@@ -1,0 +1,11 @@
+app: thunar
+binpatch: true
+
+ingredients:
+  dist: focal
+  packages: thunar
+  sources: 
+    - deb http://fr.archive.ubuntu.com/ubuntu focal main universe
+    - deb http://security.ubuntu.com/ubuntu focal-security main universe
+script:
+  - cp -f ./usr/share/icons/hicolor/128x128/apps/Thunar.png .
