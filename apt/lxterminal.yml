@@ -1,0 +1,11 @@
+app: lxterminal
+binpatch: true
+
+ingredients:
+  dist: focal
+  packages: lxterminal
+  sources: 
+    - deb http://fr.archive.ubuntu.com/ubuntu focal main universe
+    - deb http://security.ubuntu.com/ubuntu focal-security main universe
+#script:
+#  - cp -f ./usr/share/libfm/images/folder.png ./system-file-manager.png
