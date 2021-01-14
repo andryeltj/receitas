@@ -3,17 +3,9 @@ binpatch: true
 
 ingredients:
   dist: focal
+  packages: gnome-paint
   sources: 
-    - deb http://archive.ubuntu.com/ubuntu/ focal main universe
-
+    - deb http://fr.archive.ubuntu.com/ubuntu focal main universe
+    - deb http://security.ubuntu.com/ubuntu focal-security main universe
 script:
-  - cat > gnome-paint.desktop <<\EOF
-  - [Desktop Entry]
-  - Categories=Utility;GTK;
-  - Comment=Paint
-  - Exec=gp
-  - Icon=gp
-  - Name=Paint
-  - StartupNotify=false
-  - Type=Application
-  - EOF
+  - wget -q --show-progress -c -O gp.png https://cdn.iconscout.com/icon/free/png-256/design-tools-1575104-1331439.png
