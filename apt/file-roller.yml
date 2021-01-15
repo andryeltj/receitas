@@ -1,0 +1,13 @@
+app: file-roller
+binpatch: true
+
+ingredients:
+  dist: focal
+  package: file-roller
+  sources: 
+    - deb http://fr.archive.ubuntu.com/ubuntu focal main universe
+    - deb http://security.ubuntu.com/ubuntu focal-security main universe
+#    - deb http://packages.linuxmint.com/ ulyana main upstream import backport #id:linuxmint_main
+script:
+  - cp -f ./usr/share/icons/hicolor/scalable/apps/org.gnome.ArchiveManager.svg ./
+  - cp -f ./usr/share/applications/org.gnome.FileRoller.desktop ./
