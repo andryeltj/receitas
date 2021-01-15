@@ -2,12 +2,9 @@ app: Geany
 binpatch: true
 
 ingredients:
-  package: geany-*
   dist: focal
-  sources: 
-    - deb http://us.archive.ubuntu.com/ubuntu/ focal main universe
-  ppas:
-    - geany-dev/ppa
-
-script:
-  - cp ./usr/share/icons/hicolor/scalable/apps/geany.svg .
+  package: geany*
+  sources:
+    - deb http://us.archive.ubuntu.com/ubuntu focal main universe
+#  ppas:
+#    - geany-dev/ppa
