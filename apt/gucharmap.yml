@@ -1,0 +1,11 @@
+app: gucharmap
+binpatch: true
+
+ingredients:
+  dist: focal
+  packages: gucharmap
+  sources: 
+    - deb http://fr.archive.ubuntu.com/ubuntu focal main universe
+    - deb http://security.ubuntu.com/ubuntu focal-security main universe
+script:
+  - wget -q --show-progress -c -O accessories-character-map.png https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Gnome-accessories-character-map.svg/1200px-Gnome-accessories-character-map.svg.png
