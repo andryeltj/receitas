@@ -4,18 +4,8 @@ binpatch: true
 ingredients:
   dist: focal
   sources: 
-    - deb http://archive.ubuntu.com/ubuntu/ focal main universe
+    - deb http://archive.ubuntu.com/ubuntu focal main universe
 
 script:
-  - cat > lxtask.desktop <<\EOF
-  - [Desktop Entry]
-  - Categories=System;GTK;
-  - Comment=Gerenciador de tarefas
-  - Exec=lxtask
-  - Icon=lxtask
-  - Name=Gerenciador de tarefas
-  - StartupNotify=false
-  - Type=Application
-  - EOF
-  - wget -q --show-progress -c -O lxtask.svg https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme/master/Papirus/64x64/apps/applications-utilities.svg .
-  - cp -f ./lxtask.svg ./usr/share/icons/hicolor/256x256/apps
+  - wget -q --show-progress -c -O utilities-system-monitor.svg https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme/master/Papirus/64x64/apps/applications-utilities.svg
+  - cp -Rf ./utilities-system-monitor.svg ./usr/share/icons/hicolor/256x256/apps/
