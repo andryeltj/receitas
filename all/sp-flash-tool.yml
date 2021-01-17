@@ -9,6 +9,7 @@ ingredients:
     - wget -q --show-progress -c -O spflashtool.zip 'https://spflashtools.com/wp-content/uploads/SP_Flash_Tool_v5.2044_Linux.zip' --header 'User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:78.0) Gecko/20100101 Firefox/78.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3' --header 'DNT: 1' --header 'Connection: keep-alive' --header 'Referer: https://spflashtools.com/linux/sp-flash-tool-v5-2044-for-linux' --header 'Cookie: __cfduid=d21929a5ffa76fd712b1e6ac350ed8f0e1610884172; _ga=GA1.2.194064765.1610884176; _gid=GA1.2.86557668.1610884176; __gads=ID=e0815add14b97408-22dda589c8b300e5:T=1610884178:RT=1610884178:S=ALNI_MYbVyZrLOHLFEdsOSTm-eNeG8aTww' --header 'Upgrade-Insecure-Requests: 1' --header 'TE: Trailers'
     - unzip spflashtool.zip
 script:
+  - FileV=5.2044
   - FNAME=SP_Flash_Tool_v5.2044_Linux
   - cp -Rf ../$FNAME ./usr
   - rm -Rf ./usr/bin
@@ -26,7 +27,7 @@ script:
   - Comment=Flash or Install the Stock Firmware on your Mediatek powered
   - Exec=flash_tool.sh
   - Icon=spflashtool
-  - Name=SP FlashTool-$FVERSION
+  - Name=SP FlashTool-$FileV
   - StartupNotify=false
   - Type=Application
   - EOF
