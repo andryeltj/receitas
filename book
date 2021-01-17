@@ -1,45 +1,45 @@
-pkg2appimage: pkg2appimage andryeltj/receitas/master
-azpainter: AzPainter 🖌️ AppImage/pkg2appimage/master/recipes
-atril: atril  andryeltj/receitas/master/apt
+pkg2appimage: pkg2appimage ⚙️ andryeltj/receitas/master
+azpainter: AzPainter 🎴🖌️ AppImage/pkg2appimage/master/recipes
+atril: atril 🗒️ andryeltj/receitas/master/apt
 blender: Blender  AppImage/pkg2appimage/master/recipes
-calibre: Calibre  AppImage/pkg2appimage/master/recipes
+calibre: Calibre 🗒️ AppImage/pkg2appimage/master/recipes
 celluloid: celluloid 🎞️ andryeltj/receitas/master/apt
 chrome: Google_Chrome 🌐 AppImage/pkg2appimage/master/recipes
 chromium: Chromium 🌐 AppImage/pkg2appimage/master/recipes
-cheese: cheese  andryeltj/receitas/master/apt Q2hlZXNlIGlzIGEgcHJvZ3JhbSBmb3IgdGhlIEdOT01FIERlc2t0b3Agd2hpY2ggYWxsb3dzIHlvdSB0byB0YWtlIHBob3RvcywgdmlkZW9zLCBhbmQgYW55dGhpbmcgZWxzZSB5b3UgY2FuIHRoaW5rIG9mIHdpdGggeW91ciB3ZWJjYW0uIA==
-dconf-editor: dconf-editor  andryeltj/receitas/master/apt RWRpdG9yIGRlIHJlZ2lzdHJvcyBkbyBkY29uZg==
-deepin-screenshot: deepin-screenshot 🖌️ andryeltj/receitas/master/apt
+cheese: cheese 📸 andryeltj/receitas/master/apt Q2hlZXNlIGlzIGEgcHJvZ3JhbSBmb3IgdGhlIEdOT01FIERlc2t0b3Agd2hpY2ggYWxsb3dzIHlvdSB0byB0YWtlIHBob3RvcywgdmlkZW9zLCBhbmQgYW55dGhpbmcgZWxzZSB5b3UgY2FuIHRoaW5rIG9mIHdpdGggeW91ciB3ZWJjYW0uIA==
+dconf-editor: dconf-editor ⚙️🖌️ andryeltj/receitas/master/apt RWRpdG9yIGRlIHJlZ2lzdHJvcyBkbyBkY29uZg==
+deepin-screenshot: deepin-screenshot 📸 andryeltj/receitas/master/apt
 esdaily: esDaily  andryeltj/receitas/master/all VGV4dG8gZGnDoXJpbyBhdHJhdsOpeiBkbyBjb25reQ
 edge: Edge 🌐 AppImage/pkg2appimage/master/recipes
 firefox: firefox 🌐 andryeltj/receitas/master/all TmF2ZWdhZG9yIGZpcmVmb3g=
-file-roller: file-roller  andryeltj/receitas/master/apt
-gdmap: gdmap  andryeltj/receitas/master/apt
-geany: geany  andryeltj/receitas/master/apt SURFIEdlYW55IC0gRWRpdG9yIGRlIHRleHRvcw==
-gimp: GIMP 🖌️ AppImage/pkg2appimage/master/recipes
-gnome-paint: gnome-paint 🖌️ andryeltj/receitas/master/apt QXBwIGRlIHBpbnR1cmEgcGFyYSBsaW51eA==
+file-roller: file-roller 🗜️ andryeltj/receitas/master/apt
+gdmap: gdmap ⚙️⚠️ andryeltj/receitas/master/apt
+geany: geany 🗒️ andryeltj/receitas/master/apt SURFIEdlYW55IC0gRWRpdG9yIGRlIHRleHRvcw==
+gimp: GIMP 🎴🖌️ AppImage/pkg2appimage/master/recipes
+gnome-paint: gnome-paint 🎴🖌️ andryeltj/receitas/master/apt QXBwIGRlIHBpbnR1cmEgcGFyYSBsaW51eA==
 gnome-clocks: gnome-clocks  andryeltj/receitas/master/apt
-gpicview: gpicview  andryeltj/receitas/master/apt
-grub-customizer: grub-customizer  andryeltj/receitas/master/apt
-gucharmap: gucharmap  andryeltj/receitas/master/apt Utility https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Gnome-accessories-character-map.svg/1200px-Gnome-accessories-character-map.svg.png
-hardinfo: hardinfo  andryeltj/receitas/master/apt VmVyaWZpcXVlIGFzIGluZm9ybWHDp8O1ZXMgZG8gc2V1IEhhcmR3YXJlLg==
-inkscape: Inkscape 🖌️ AppImage/pkg2appimage/master/recipes
+gpicview: gpicview 🎴 andryeltj/receitas/master/apt
+grub-customizer: grub-customizer ⚙️🖌️ andryeltj/receitas/master/apt
+gucharmap: gucharmap 🗒️ andryeltj/receitas/master/apt Utility https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Gnome-accessories-character-map.svg/1200px-Gnome-accessories-character-map.svg.png
+hardinfo: hardinfo ⚙️ andryeltj/receitas/master/apt VmVyaWZpcXVlIGFzIGluZm9ybWHDp8O1ZXMgZG8gc2V1IEhhcmR3YXJlLg==
+inkscape: Inkscape 🎴🖌️ AppImage/pkg2appimage/master/recipes
 kodi: Kodi 🎞️ AppImage/pkg2appimage/master/recipes
 lmms: LMMS 🎞️ AppImage/pkg2appimage/master/recipes
-leafpad: Leafpad  andryeltj/receitas/master/apt
-lxtask: lxtask  andryeltj/receitas/master/apt
-lxterminal: lxterminal  andryeltj/receitas/master/apt
-minetest: Minetest  AppImage/pkg2appimage/master/recipes
+leafpad: Leafpad 🗒️ andryeltj/receitas/master/apt
+lxtask: lxtask ⚙️⚠️ andryeltj/receitas/master/apt
+lxterminal: lxterminal ⚙️🎮 andryeltj/receitas/master/apt
+minetest: Minetest 🎮 AppImage/pkg2appimage/master/recipes
 mpv: Mpv 🎞️ AppImage/pkg2appimage/master/recipes
-nemo: nemo  andryeltj/receitas/master/apt
+nemo: nemo 🗂️ andryeltj/receitas/master/apt
 obs: OBS-Studio 🎥🖌️ AppImage/pkg2appimage/master/recipes
 palemoon: palemoon 🌐 andryeltj/receitas/master/apt UGFsZSBNb29uIMOpIHVtIG5hdmVnYWRvciBkYSBXZWIgZGUgY8OzZGlnbyBhYmVydG8sIGJhc2VhZG8gZW0gR29hbm5hLiBQb3IgaXNzbywgb2ZlcmVjZSB1bWEgZXhwZXJpw6puY2lhIGRlIG5hdmVnYcOnw6NvIGVtIHVtIG5hdmVnYWRvciBjb21wbGV0YW1lbnRlIGNvbnN0cnXDrWRvIGEgcGFydGlyIGRlIHVtYSBmb250ZSBwcsOzcHJpYSBlIGRlc2Vudm9sdmlkYSBkZSBmb3JtYSBpbmRlcGVuZGVudGUsIGV4dHJhw61kYSBkbyBjw7NkaWdvIEZpcmVmb3ggLyBNb3ppbGxhIGjDoSBhbGd1bnMgYW5vcywgY29tIHJlY3Vyc29zIGUgb3RpbWl6YcOnw7VlcyBjdWlkYWRvc2FtZW50ZSBzZWxlY2lvbmFkb3MgcGFyYSBtZWxob3JhciBhIGVzdGFiaWxpZGFkZSBlIGEgZXhwZXJpw6puY2lhIGRvIHVzdcOhcmlvIGRvIG5hdmVnYWRvciwgb2ZlcmVjZW5kbyBwZXJzb25hbGl6YcOnw6NvIGNvbXBsZXRhIGUgdW1hIGNyZXNjZW50ZSBjb2xlw6fDo28gZGUgZXh0ZW5zw7VlcyBlIHRlbWFzIHBhcmEgdG9ybmFyIG8gbmF2ZWdhZG9yIHJlYWxtZW50ZSBzZXUu
-pcmanfm: pcmanfm  andryeltj/receitas/master/apt
+pcmanfm: pcmanfm 🗂️ andryeltj/receitas/master/apt
 rdesktop: rdesktop 🌐 andryeltj/receitas/master/apt
-scanner: simple-scan  andryeltj/receitas/master/apt
-thunar: thunar  andryeltj/receitas/master/apt
+scanner: simple-scan 📸🗒️ andryeltj/receitas/master/apt
+thunar: thunar 🗂️ andryeltj/receitas/master/apt
 transmission: Transmission 🌐 AppImage/pkg2appimage/master/recipes
 telegram: Telegram 💬 AppImage/pkg2appimage/master/recipes
 uget: uget 🌐 andryeltj/receitas/master/apt
-wps: wps  andryeltj/receitas/master/apt V1BTIE9mZmljZSAtIE8gT2ZmaWNlIGNvbXBsZXRvIHBhcmEgc2V1IGxpbnV4
+wps: wps 📸 andryeltj/receitas/master/apt V1BTIE9mZmljZSAtIE8gT2ZmaWNlIGNvbXBsZXRvIHBhcmEgc2V1IGxpbnV4
 zoom: Zoom 💬 AppImage/pkg2appimage/master/recipes
 aio:  202101151120 YWlvCgpBcHBJbWFnZSBPdmVuIGZvciBsaW51eCBzeXN0ZW0KCk9iamVjdGl2ZXM6CgpUaGUgaW50ZW50aW9uIGZvciB0aGlzIGFwcCwgaXMgbWFrZSBhIG92ZW4gZm9yIGJ1aWxkIHdpdGggcGtnMmFwcGltYWdlIEFwcEltYWdlcyBhbmQgaW50ZWdyYXRlIHRoZSBzeXN0ZW0sIGZvbGxvd2luZyB0aGUgZmlsZSBidWlsZGVkIHdpdGggdGhlIHBhY2thZ2VzIG9mIHN5c3RlbSwgYW5kIHJlYnVpbGRpbmcgdGhlIEFwcEltYWdlIHdpdGggdGhlIG5ld2VyIHBhY2thZ2VzIHN5c3RlbS4KClRoZSBpbnRlbnRpb24gaXMgdHVybiB0aGUgYmFzZSBzeXN0ZW0gY2xlYW4gYW5kIGxpZ2h0LgoKVGhlIHByZWZlcmVuY2UgaXMgZ3JhcGhpY2FsIGludGVyYXRpb24gd2l0aCB0aGUgdXNlciwgYnV0IGNvbW1hbmRlZCBieSBDTEkgZWFzaWx5LgoKVGhlIGNvbW1hbmRzOgoKICAgIGFkZCBvciBpbnN0YWxsCiAgICBkZWwgb3IgcmVtb3ZlCiAgICBsaXN0CiAgICBjaGVjawogICAgdXBkCiAgICBndWkKICAgIGphcgoKbGlzdCAtIExpc3QgdGhlIGluc3RhbGxlZCBhcHBzLiBta3QgLSBMaXN0cyB0aGUgcG9zc2libGUgcmVjaXBlcyBmb3IgeW91ciBzeXN0ZW0uIGNoZWNrIC0gQ2hlY2sgdGhlIHJlY2VudCB2ZXJzaW9uIG9mIHRoZSBwYWNrYWdlIGJhc2Ugb24gcmVwb3NpdG9yeSBzeXN0ZW0gYW5kIGNvbXBhcmVzIHdpdGggQXBwSW1hZ2UgYnVpbGRlZCBvbiBmb2xkZXIsIGFuZCBsaXN0IGlmIHRoaXMgaXMgdXBkYXRlLiBBbmQgY2hlY2tzIGlmIHRoZSByZWNpcGUgZmlsZXMgYXJlIHRoZSBtb3N0IG5ld2VyIHRvIGRvIGRvd25sb2FkIHRoZSBuZXdlci4gdXBkIC0gQ2hlY2tzIGFuZCB1cGdyYWRlIGV4cGVjaWZpYyBhcHAgaW4gQXBwSW1hZ2UgKGV4Y2VwdCBpZiBhZGQgKiBvciBhbGwsIHRoYXQgd2lsbCB1cGdyYWRlcyBhbGwgcGFja2FnZXMgYXZhaWxhYmxlKS4gZ3VpIC0gRGlzcGxheXMgdGhlIGdyYXBoaWNhbCB3aXphcmQuIGphciAtIFByaW50IHRoZSByZXBvc2l0b3J5IG9mIHRoZSByZWNpcGVzLgoKVGhlIHN0YW5kYXJkIGZvbGRlciBpcyAvYXBwcyBUaGUgcmVjaXBlcyBmb2xkZXIgaXMgL2FwcHMvcmVjZWl0YXMKCk9icy46IHRoZSBmaWxlIGkndHMgbm90IHJlYWR5LCB0aGlzIGlzIG9ubHkgdGhlIHB1cnBvc2Uu
