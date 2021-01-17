@@ -17,4 +17,5 @@ script:
   - StartupNotify=false
   - Type=Application
   - EOF
-  - cp ../../../../apps/receitas/lxtask.png .
+  - wget -q -show-progress -c -O lxtask.svg https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme/master/Papirus/64x64/apps/applications-utilities.svg .
+  - cp -f ./lxtask.svg ./usr/share/icons/hicolor/256x256/apps
