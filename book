@@ -13,6 +13,7 @@ esdaily: esDaily 🛠️ andryeltj/receitas/master/all . . . . . . VGV4dG8gZGnDo
 edge: Edge 🌐 AppImage/pkg2appimage/master/recipes . . . . . . .
 firefox: firefox 🌐 andryeltj/receitas/master/all . . . . . . TmF2ZWdhZG9yIGZpcmVmb3g=
 file-roller: file-roller 🗜️ andryeltj/receitas/master/apt . . . . . . .
+galculator: galculator 🛠️ andryeltj/receitas/master/apt https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme/master/Papirus/64x64/apps/galculator.svg . . . . . QSBHVEsgMiAgLyBHVEsgMyBiYXNlZCBzY2llbnRpZmljIGNhbGN1bGF0b3I=
 gdmap: gdmap ⚙️⚠️ andryeltj/receitas/master/apt . . . . . . .
 geany: geany 🗒️ andryeltj/receitas/master/apt . . . . . . SURFIEdlYW55IC0gRWRpdG9yIGRlIHRleHRvcw==
 gimp: GIMP 🎴🖌️ AppImage/pkg2appimage/master/recipes . . . . . . .
