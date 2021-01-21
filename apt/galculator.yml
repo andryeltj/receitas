@@ -8,7 +8,10 @@ ingredients:
     - deb http://fr.archive.ubuntu.com/ubuntu focal main universe
     - deb http://security.ubuntu.com/ubuntu focal-security main universe
 script:
+  - rm -Rf ./usr/share/pixmaps/galculator.xpm
+  - rm -Rf ./usr/share/icons/hicolor/48x48/apps/galculator.png
+  - rm -Rf ./usr/share/icons/hicolor/scalable/apps/galculator.svg
+
   - wget -q -c -O galculator.svg https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme/master/Papirus/64x64/apps/galculator.svg
   - cp -Rf ./galculator.svg ./usr/share/icons/hicolor/256x256/apps
-  - rm -Rf ./usr/share/icons/hicolor/48x48/apps/galculator.png
-  - rm -Rf ./usr/share/pixmaps/galculator.xpm
+  - cp -Rf ./galculator.svg ./usr/share/icons/hicolor/scalable/apps
