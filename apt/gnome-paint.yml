@@ -2,10 +2,12 @@ app: gnome-paint
 binpatch: true
 
 ingredients:
+  package: gnome-paint
   dist: focal
-  packages: gnome-paint
-  sources: 
+  sources:
     - deb http://fr.archive.ubuntu.com/ubuntu focal main universe
     - deb http://security.ubuntu.com/ubuntu focal-security main universe
 script:
-  - wget -q --show-progress -c -O gp.png https://cdn.iconscout.com/icon/free/png-256/design-tools-1575104-1331439.png
+  - wget -q -c -O gp.svg https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme/master/Papirus/64x64/apps/kipi-logo.svg
+  - cp -Rf ./gp.svg ./usr/share/icons/hicolor/256x256/apps
+  - rm -Rf ./usr/share/icons/hicolor/16x16/apps/gp.png
