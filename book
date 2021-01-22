@@ -9,6 +9,7 @@ chromium: Chromium 🌐 AppImage/pkg2appimage/master/recipes . . . . . . .
 cheese: cheese 📸 andryeltj/receitas/master/apt . . . . . . Q2hlZXNlIGlzIGEgcHJvZ3JhbSBmb3IgdGhlIEdOT01FIERlc2t0b3Agd2hpY2ggYWxsb3dzIHlvdSB0byB0YWtlIHBob3RvcywgdmlkZW9zLCBhbmQgYW55dGhpbmcgZWxzZSB5b3UgY2FuIHRoaW5rIG9mIHdpdGggeW91ciB3ZWJjYW0uIA==
 dconf-editor: dconf-editor ⚙️🖌️ andryeltj/receitas/master/apt . . . . . . RWRpdG9yIGRlIHJlZ2lzdHJvcyBkbyBkY29uZg==
 deepin-screenshot: deepin-screenshot 📸 andryeltj/receitas/master/apt . . . . . . .
+deepin-calculator: deepin-calculator 🛠️ https://raw.githubusercontent.com/linuxdeepin/deepin-calculator/master/src/assets/images/deepin-calculator.svg https://sempreupdate.com.br/wp-content/uploads/2020/09/archex-deepin-all-apps-scaled.jpg https://www.deepin.org/wp-content/uploads/2017/11/3-4-255x150.png https://www.deepin.org/wp-content/uploads/2017/11/2-4-255x150.png https://www.deepin.org/wp-content/uploads/2017/11/1-4-255x150.png https://user-images.githubusercontent.com/24555644/51998503-f298a200-249f-11e9-952d-6ed0b6b236a9.png RGVlcGluIGNhbGN1bGF0b3IgaXMgYW4gZWFzeSB0byB1c2UgY2FsY3VsYXRvciBmb3Igb3JkaW5hcnkgdXNlcnMu
 esdaily: esDaily 🛠️ andryeltj/receitas/master/all . . . . . . VGV4dG8gZGnDoXJpbyBhdHJhdsOpeiBkbyBjb25reQ
 edge: Edge 🌐 AppImage/pkg2appimage/master/recipes . . . . . . .
 firefox: firefox 🌐 andryeltj/receitas/master/all . . . . . . TmF2ZWdhZG9yIGZpcmVmb3g=
