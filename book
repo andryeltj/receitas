@@ -15,11 +15,11 @@ edge: Edge 🌐 AppImage/pkg2appimage/master/recipes Microsoft&nbsp;Edge https:/
 firefox: firefox 🌐 andryeltj/receitas/master/all Mozilla&nbsp;Firefox https://upload.wikimedia.org/wikipedia/commons/a/a0/Firefox_logo%2C_2019.svg . . . . . TmF2ZWdhZG9yIGZpcmVmb3g=
 file-roller: file-roller 🗜️ andryeltj/receitas/master/apt File&nbsp;Roller . . . . . . .
 galculator: galculator 🛠️ andryeltj/receitas/master/apt Galculator https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme/master/Papirus/64x64/apps/galculator.svg . . . . . QSBHVEsgMiAgLyBHVEsgMyBiYXNlZCBzY2llbnRpZmljIGNhbGN1bGF0b3I=
-gdmap: gdmap ⚙️⚠️ andryeltj/receitas/master/apt Disc&nbsp;Map . . . . . . .
-geany: geany 🗒️ andryeltj/receitas/master/apt Geany&nbsp;editor . . . . . . SURFIEdlYW55IC0gRWRpdG9yIGRlIHRleHRvcw==
-gimp: GIMP 🎴🖌️ AppImage/pkg2appimage/master/recipes Gimp . . . . . . .
-gnome-paint: gnome-paint 🎴🖌️ andryeltj/receitas/master/apt Gnome&nbsp;Paint . . . . . . QXBwIGRlIHBpbnR1cmEgcGFyYSBsaW51eA==
-gnome-clocks: gnome-clocks 🛠️ andryeltj/receitas/master/apt Gnome&nbsp;Clocks . . . . . . .
+gdmap: gdmap ⚙️⚠️ andryeltj/receitas/master/apt Disc&nbsp;Map https://github.com/joshuashaffer/gdmap/raw/master/data/gdmap_icon.png . . . . . .
+geany: geany 🗒️ andryeltj/receitas/master/apt Geany&nbsp;editor https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Geany_logo.svg/1200px-Geany_logo.svg.png . . . . . SURFIEdlYW55IC0gRWRpdG9yIGRlIHRleHRvcw==
+gimp: GIMP 🎴🖌️ AppImage/pkg2appimage/master/recipes Gimp https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme/master/Papirus/64x64/apps/gimp.svg . . . . . .
+gnome-paint: gnome-paint 🎴🖌️ andryeltj/receitas/master/apt Gnome&nbsp;Paint https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme/master/Papirus/64x64/apps/kipi-logo.svg . . . . . QXBwIGRlIHBpbnR1cmEgcGFyYSBsaW51eA==
+gnome-clocks: gnome-clocks 🛠️ andryeltj/receitas/master/apt Gnome&nbsp;Clocks https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme/master/Papirus/64x64/apps/preferences-system-time.svg . . . . . .
 gpicview: gpicview 🎴 andryeltj/receitas/master/apt Visualizador&nbsp;de&nbsp;Imagens . . . . . . .
 grub-customizer: grub-customizer ⚙️🖌️ andryeltj/receitas/master/apt Editor&nbsp;do&nbsp;Grub . . . . . . .
 gucharmap: gucharmap 🗒️ andryeltj/receitas/master/apt Visualizador&nbsp;de&nbsp;Fontes https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Gnome-accessories-character-map.svg/1200px-Gnome-accessories-character-map.svg.png . . . . . .
