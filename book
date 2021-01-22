@@ -43,6 +43,6 @@ thunar: thunar 🗂️ andryeltj/receitas/master/apt Gerenciador&nbsp;de&nbsp;ar
 transmission: Transmission 🌐 AppImage/pkg2appimage/master/recipes Gereniador&nbsp;de&nbsp;Torrents . . . . . . .
 telegram: Telegram 💬 AppImage/pkg2appimage/master/recipes Mensageiro&nbsp;Telegram . . . . . . .
 uget: uget 🌐 andryeltj/receitas/master/apt Uget&nbsp;Downloader . . . . . . .
-wps: wps 📸 andryeltj/receitas/master/apt WPS&nbsp;Office . . . . . . V1BTIE9mZmljZSAtIE8gT2ZmaWNlIGNvbXBsZXRvIHBhcmEgc2V1IGxpbnV4
-zoom: Zoom 💬 AppImage/pkg2appimage/master/recipes Zoom&nbsp;Reuniões . . . . . . .
+wps: wps 📸 andryeltj/receitas/master/apt WPS&nbsp;Office https://storage.googleapis.com/appconfig-media/appconfig-content/uploads/2016/11/google-play.png . . . . . V1BTIE9mZmljZSAtIE8gT2ZmaWNlIGNvbXBsZXRvIHBhcmEgc2V1IGxpbnV4
+zoom: Zoom 💬 AppImage/pkg2appimage/master/recipes Zoom&nbsp;Reuniões https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme/master/Papirus/64x64/apps/Zoom.svg https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Zoom_Alma_Mater_Europaea.jpg/300px-Zoom_Alma_Mater_Europaea.jpg https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Zoom_Alma_Mater_Europaea.jpg/300px-Zoom_Alma_Mater_Europaea.jpg . . . .
 aio:  202101211956 ⚙️ https://raw.githubusercontent.com/andryeltj/aio/master/README.md
