@@ -8,4 +8,4 @@ ingredients:
     - deb http://fr.archive.ubuntu.com/ubuntu focal main universe
     - deb http://security.ubuntu.com/ubuntu focal-security main universe
 script:
-  - cp -Rf /usr/share/icons/hicolor/scalable/apps/audacity.svg ./
+  - cp -Rf ./usr/share/icons/hicolor/scalable/apps/audacity.svg ./
