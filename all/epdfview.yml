@@ -1,0 +1,15 @@
+app: epdfview
+binpatch: true
+
+ingredients:
+  script:
+    - wget -q -c http://ftp.altlinux.org/pub/distributions/ALTLinux/Sisyphus/x86_64/RPMS.classic/epdfview-0.1.8-alt7.x86_64.rpm
+    - rpm2cpio epdfview-0.1.8-alt7.x86_64.rpm | cpio -idmv
+script:
+  - yes | cp -Rf ../usr ./
+  - cp -Rf ./usr/share/applications/epdfview.desktop ./
+  - wget -q --show-progress -c -O epdfview.svg https://upload.wikimedia.org/wikipedia/commons/9/9b/GNOME_Document_Viewer_icon_2019.svg
+  - rm -Rf ./usr/share/icons/hicolor/48x48/epdfview.png
+  - cp -Rf ./epdfview.svg ./usr/share/icons/hicolor/48x48/
+  - rm -Rf ./usr/share/epdfview/pixmaps/icon_epdfview-24.png
+  - wget -q -c -O ./usr/share/epdfview/pixmaps/icon_epdfview-24.png https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/GNOME_Document_Viewer_icon_2019.svg/32px-GNOME_Document_Viewer_icon_2019.svg.png
