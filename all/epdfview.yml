@@ -9,7 +9,8 @@ script:
   - yes | cp -Rf ../usr ./
   - cp -Rf ./usr/share/applications/epdfview.desktop ./
   - wget -q --show-progress -c -O epdfview.svg https://upload.wikimedia.org/wikipedia/commons/9/9b/GNOME_Document_Viewer_icon_2019.svg
-  - rm -Rf ./usr/share/icons/hicolor/48x48/epdfview.png
-  - cp -Rf ./epdfview.svg ./usr/share/icons/hicolor/48x48/
+  - cp -Rf ./epdfview.svg ./usr/share/icons/hicolor/256x256/apps/
+  - rm -Rf ./usr/share/icons/hicolor/48x48/apps/epdfview.png
+  - cp -Rf ./epdfview.svg ./usr/share/icons/hicolor/48x48/apps/
   - rm -Rf ./usr/share/epdfview/pixmaps/icon_epdfview-24.png
   - wget -q -c -O ./usr/share/epdfview/pixmaps/icon_epdfview-24.png https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/GNOME_Document_Viewer_icon_2019.svg/32px-GNOME_Document_Viewer_icon_2019.svg.png
