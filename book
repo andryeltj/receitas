@@ -28,6 +28,7 @@ grub-customizer: grub-customizer ⚙️🖌️ andryeltj/receitas/master/apt Edi
 gucharmap: gucharmap 🗒️ andryeltj/receitas/master/apt Visualizador&nbsp;de&nbsp;Fontes https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Gnome-accessories-character-map.svg/1200px-Gnome-accessories-character-map.svg.png . . . . . .
 hardinfo: hardinfo ⚙️ andryeltj/receitas/master/apt Informações&nbsp;sobre&nbsp;o&nbsp;Hardware . . . . . . VmVyaWZpcXVlIGFzIGluZm9ybWHDp8O1ZXMgZG8gc2V1IEhhcmR3YXJlLg==
 inkscape: Inkscape 🎴🖌️ AppImage/pkg2appimage/master/recipes Editor&nbsp;de&nbsp;Vetores . . . . . . .
+kdenlive: kdenlive 🎞️🖌️ ndryeltj/receitas/master/external Kdenlive&nbsp;video&nbsp;editor https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme/master/Papirus/64x64/apps/kdenlive.svg https://www.edivaldobrito.com.br/wp-content/uploads/2018/02/kdenlive-beta-no-linux.jpg https://www.edivaldobrito.com.br/wp-content/uploads/2018/02/kdenlive-beta-no-linux.jpg https://www.edivaldobrito.com.br/wp-content/uploads/2017/12/kdenlive-no-linux.jpg https://cdn.pling.com/img/8/c/7/3/5bd9ee8f758f0a935edf1cbc927c28f42699.png S2RlbmxpdmUgaXMgYSBGcmVlIGFuZCBPcGVuIFNvdXJjZSB2aWRlbyBlZGl0aW5nIGFwcGxpY2F0aW9uLCBiYXNlZCBvbiBNTFQgRnJhbWV3b3JrIGFuZCBLREUgRnJhbWV3b3JrcyA1Lg==
 kodi: Kodi 🎞️ AppImage/pkg2appimage/master/recipes Kodi . . . . . . .
 lmms: LMMS 🎞️ AppImage/pkg2appimage/master/recipes LMMS . . . . . . .
 leafpad: Leafpad 🗒️ andryeltj/receitas/master/apt Leafpad . . . . . . .
