@@ -1,0 +1,14 @@
+app: dillo
+binpatch: true
+
+ingredients:
+  package: dillo
+  dist: focal
+  sources:
+    - deb http://us.archive.ubuntu.com/ubuntu focal main universe
+script:
+  - wget -q --show-progress -O dillo.svg https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme/master/Papirus/64x64/apps/dillo.svg
+  - rm -Rf ./dillo.png
+  - rm -Rf ./usr/share/pixmaps/dillo.png
+  - cp -Rf ./dillo.svg ./usr/share/icons/hicolor/256x256/apps/
+  - cp -Rf ./dillo.svg ./usr/share/pixmaps/
