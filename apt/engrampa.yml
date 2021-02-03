@@ -1,0 +1,12 @@
+app: engrampa
+binpatch: true
+
+ingredients:
+  package: engrampa
+  dist: focal
+  sources:
+    - deb http://fr.archive.ubuntu.com/ubuntu focal main universe
+    - deb http://security.ubuntu.com/ubuntu focal-security main universe
+script:
+  - cp -Rf ./usr/share/icons/hicolor/scalable/apps/engrampa.svg .
+  - cp -Rf ./engrampa.svg ./usr/share/icons/hicolor/256x256/apps/
