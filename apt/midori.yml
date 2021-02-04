@@ -1,6 +1,6 @@
 app: midori
 binpatch: true
-freelib: libgbm1
+freelib: midori
 
 ingredients:
   package: midori libwebkit2gtk-4.0-37 libgstreamer-gl1.0-0 libegl1 libgbm1
