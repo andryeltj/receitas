@@ -1,0 +1,71 @@
+app: teamviewer
+binpatch: true
+freelib: teamviewer
+
+ingredients:
+  dist: focal
+  sources:
+    - deb http://fr.archive.ubuntu.com/ubuntu focal main universe
+    - deb https://linux.teamviewer.com/deb stable main
+#  package: teamviewer
+  packages:
+    - teamviewer
+    - libqt5gui5
+    - libegl1
+    - libgbm1
+    - libwayland-client0
+    - libwayland-server0
+    - libegl-mesa0
+#    - libqt5widgets5
+#    - libqt5qml5
+#    - libqt5quick5
+#    - libqt5dbus5
+#    - libqt5webkit5
+#    - libqt5x11extras5
+#    - qml-module-qtquick2
+#    - qml-module-qtquick-controls
+#    - qml-module-qtquick-dialogs
+#    - qml-module-qtquick-window2
+#    - qml-module-qtquick-layouts
+#    - fonts-liberation
+#  script:
+#    - wget -q --show-progress -c https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
+
+script:
+  - echo "[Desktop Entry]
+  - Name=TeamViewer
+  - Exec=teamviewer
+  - Icon=teamviewer
+  - Type=Application
+  - Categories=Network" > teamviewer.desktop
+  - cp -Rf ./opt/teamviewer/tv_bin/desktop/teamviewer_256.png ./teamviewer.png
+  - cp -Rf ./opt/teamviewer/tv_bin/desktop/teamviewer_256.png ./usr/share/icons/hicolor/256x256/apps/teamviewer.png
+  - cp -Rf ./opt/teamviewer/tv_bin/desktop/teamviewer_48.png ./usr/share/icons/hicolor/48x48/apps/teamviewer.png
+  - cp -Rf ./opt/teamviewer/tv_bin/desktop/teamviewer_32.png ./usr/share/icons/hicolor/32x32/apps/teamviewer.png
+  - cp -Rf ./opt/teamviewer/tv_bin/desktop/teamviewer_20.png ./usr/share/icons/hicolor/32x32/apps/teamviewer.png
+  - cp -Rf ./opt/teamviewer/tv_bin/desktop/teamviewer_16.png ./usr/share/icons/hicolor/32x32/apps/teamviewer.png
+  - rm -Rf ./usr/bin/teamviewer
+  - ls ./opt/teamviewer/tv_bin
+  - cp -Rf ./opt/teamviewer/tv_bin/TeamViewer ./usr/bin/
+  - cp -Rf ./opt/teamviewer/tv_bin/teamviewer-config ./usr/bin/
+  - cp -Rf ./opt/teamviewer/tv_bin/teamviewerd ./usr/bin/
+  - cp -Rf ./opt/teamviewer/tv_bin/TeamViewer_Desktop ./usr/bin/
+  - cp -Rf ./opt/teamviewer/tv_bin/desktop ./usr/bin/
+  - cp -Rf ./opt/teamviewer/tv_bin/resources/* ./usr/bin/
+  - cp -Rf ./opt/teamviewer/tv_bin/script/* ./usr/bin/
+  - cp -Rf ./opt/teamviewer/tv_bin/xdg-utils/ ./usr/bin/
+  - cp -Rf ./usr/bin/xdg-utils/* ./usr/bin/ 
+  - rm -Rf ./opt/teamviewer/tv_bin
+  - mkdir ./opt/teamviewer/tv_bin
+  - ln -s ./usr/bin/TeamViewer ./usr/TeamViewer
+  - ln -s ./usr/bin/teamviewer-config ./usr/teamviewer-config
+  - ln -s ./usr/bin/teamviewerd ./usr/teamviewerd
+  - ln -s ./usr/bin/TeamViewer_Desktop ./usr/TeamViewer_Desktop
+  - ln -s ./usr/bin/ ./opt/teamviewer/tv_bin/resources
+  - ln -s ./usr/bin/ ./opt/teamviewer/tv_bin/script
+  - ln -s ./usr/bin/ ./opt/teamviewer/tv_bin/xdg-utils
+  - ln -s ./usr/bin/desktop ./opt/teamviewer/tv_bin/desktop
+  - ln -s ./usr/bin/TeamViewer ./opt/teamviewer/tv_bin/TeamViewer
+  - ln -s ./usr/bin/teamviewer-config ./opt/teamviewer/tv_bin/teamviewer-config
+  - ln -s ./usr/bin/teamviewerd ./opt/teamviewer/tv_bin/teamviewerd
+  - ln -s ./usr/bin/TeamViewer_Desktop ./opt/teamviewer/tv_bin/TeamViewer_Desktop
