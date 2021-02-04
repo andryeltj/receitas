@@ -17,4 +17,5 @@ script:
   - StartupNotify=false
   - Type=Application
   - EOF
-  - cp ../../../../media/usuario/DADOS/Wapps/APPS/receitas/grub-customizer.png .
+  - wget -q -O ./grub-customizer.png https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/aaedef94-e3e8-443f-925a-ef8acec705a6/d7uzk04-e70a13f8-d420-4816-b1d9-65217f6251cf.png
+  - cp -Rf ./grub-customizer.png ./usr/share/icons/hicolor/256x256/apps/
