@@ -9,4 +9,4 @@ ingredients:
     - deb http://security.ubuntu.com/ubuntu focal-security main universe
 script:
   - cp -Rf ./usr/share/icons/hicolor/128x128/apps/com.github.phase1geo.minder.svg ./
-  - cp -Rf ./com.github.phase1geo.minder.svg /home/usuario/minder/minder.AppDir/usr/share/icons/hicolor/256x256/apps/
+  - cp -Rf ./com.github.phase1geo.minder.svg ./usr/share/icons/hicolor/256x256/apps/
