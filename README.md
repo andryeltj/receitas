@@ -1,2 +1,2 @@
 # receitas
-Áreas de receitas para o sistema
+Áreas de receitas para o AIO
