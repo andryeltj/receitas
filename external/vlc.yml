@@ -1,3 +1,2 @@
 app: vlc
-#getonly: https://github.com/cmatomic/VLCplayer-AppImage/releases/download/continuous/VLC_media_player-3.0.11.1-x86_64.AppImage
 getonly: https://github-releases.githubusercontent.com/218595910/62168000-fdae-11ea-84f9-5dc0e918c3a7?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20210217%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210217T171736Z&X-Amz-Expires=300&X-Amz-Signature=a44dac579f26587a4a17219e9d2da6d44d5116665ad9340f0bca532ff583b802&X-Amz-SignedHeaders=host&actor_id=66152615&key_id=0&repo_id=218595910&response-content-disposition=attachment%3B%20filename%3DVLC_media_player-3.0.11.1-x86_64.AppImage&response-content-type=application%2Foctet-stream
