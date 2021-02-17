@@ -1,0 +1,12 @@
+app: pcmanfm
+binpatch: true
+
+ingredients:
+  package: pcmanfm
+  dist: focal
+  sources:
+    - deb http://br.archive.ubuntu.com/ubuntu focal main universe
+
+script:
+  - wget -O system-file-manager.svg https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme/master/Papirus/64x64/places/folder-blue.svg
+  - cp -Rf ./system-file-manager.svg ./usr/share/icons/hicolor/256x256/apps/
