@@ -9,3 +9,4 @@ ingredients:
     - deb http://security.ubuntu.com/ubuntu focal-security main universe
 script:
   - cp -f ./usr/share/libfm/images/folder.png ./system-file-manager.png
+  - cp Rf ./system-file-manager.png ./usr/share/icons/hicolor/256x256/apps/
