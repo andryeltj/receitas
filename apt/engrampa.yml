@@ -2,7 +2,9 @@ app: engrampa
 binpatch: true
 
 ingredients:
-  package: engrampa
+  packages:
+    - engrampa
+    - unrar
   dist: focal
   sources:
     - deb http://fr.archive.ubuntu.com/ubuntu focal main universe
