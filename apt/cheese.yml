@@ -1,31 +1,13 @@
 app: cheese
 binpatch: true
+freelib: cheese
 
 ingredients:
-  package: cheese cheese-common libcheese-gtk25
-  script:
-    - if [ -e "cheese_3.34.0-1build1_amd64.deb" ]; then a=a; else wget http://fr.archive.ubuntu.com/ubuntu/pool/main/c/cheese/cheese_3.34.0-1build1_amd64.deb; fi
-    - if [ -e "cheese-common_3.34.0-1build1_all.deb" ]; then a=a; else wget http://fr.archive.ubuntu.com/ubuntu/pool/main/c/cheese/cheese-common_3.34.0-1build1_all.deb; fi
-    - if [ -e "libcheese-gtk25_3.34.0-1build1_amd64.deb" ]; then a=a; else wget http://fr.archive.ubuntu.com/ubuntu/pool/main/c/cheese/libcheese-gtk25_3.34.0-1build1_amd64.deb;fi
- #   - if [ -e "" ]; then a=a; else ;fi
- #   - if [ -e "" ]; then a=a; else ;fi
- #   - if [ -e "" ]; then a=a; else ;fi
- #   - if [ -e "" ]; then a=a; else ;fi
+  package: cheese
   dist: focal
   sources: 
     - deb http://archive.ubuntu.com/ubuntu/ focal main universe
 
 script:
-  - cat > cheese.desktop <<\EOF
-  - [Desktop Entry]
-  - Categories=Utility;GTK;
-  - Comment=Webcam
-  - Exec=cheese
-  - Icon=webcam
-  - Name=cheese
-  - StartupNotify=false
-  - Keywords=photo;video;webcam;
-  - Type=Application
-  - EOF
-  - rm -Rf org.gnome.Cheese.desktop
-  - wget https://raw.githubusercontent.com/andryeltj/receitas/master/icons/webcam.png
+  - cp -Rf ./usr/share/icons/hicolor/scalable/apps/org.gnome.Cheese.svg .
+  - cp -Rf ./org.gnome.Cheese.svg ./usr/share/icon/hicolor/256x256/apps/
