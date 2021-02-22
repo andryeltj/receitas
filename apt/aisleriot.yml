@@ -1,0 +1,17 @@
+app: aisleriot
+binpatch: true
+#freelib: aisleriot
+
+ingredients:
+  package: aisleriot
+  dist: focal
+  sources: 
+    - deb http://archive.ubuntu.com/ubuntu/ focal main universe
+
+script:
+  - ICONnm=gnome-aisleriot.png
+  - Shotcurt=sol
+  - cp -Rf ./usr/share/icons/hicolor/256x256/apps/$ICONnm .
+#  - cp -Rf ./usr/share/icons/hicolor/scalable/apps/$ICONnm .
+#  - cp -Rf ./$ICONnm ./usr/share/icon/hicolor/256x256/apps/
+  - cp -Rf ./usr/share/applications/$Shotcurt.desktop .
