@@ -1,0 +1,16 @@
+app: gnome-shell-pomodoro
+binpatch: true
+freelib: cheese
+
+ingredients:
+  package: gnome-shell-pomodoro
+  dist: bionic
+  sources: 
+    - deb http://archive.ubuntu.com/ubuntu bionic main universe
+
+script:
+  - zICON="gnome-pomodoro.png";
+  - SKT="./usr/share/applications/org.gnome.Pomodoro.desktop"
+  - cp -Rf ./usr/share/icons/hicolor/256x256/apps/$zICON .
+#  - cp -Rf ./org.gnome.Cheese.svg ./usr/share/icon/hicolor/256x256/apps/
+  - cp -Rf $SKT ./
