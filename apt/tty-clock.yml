@@ -1,0 +1,18 @@
+app: tty-clock
+binpatch: true
+
+ingredients:
+  package: tty-clock
+  dist: focal
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu focal main universe
+script:
+  - wget -O tty-clock.png http://zupimages.net/up/14/30/yd95.png
+  - cp -Rf tty-clock.png ./usr/share/icons/hicolor/256x256/apps/
+  - echo "[Desktop Entry]
+  - Name=tty-clock
+  - Icon=tty-clock
+  - Exec=tty-clock
+  - Type=Application
+  - Categories=Utility
+  - NoDisplay=true" > tty-clock.desktop
