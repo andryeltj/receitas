@@ -4,7 +4,6 @@ binpatch: true
 ingredients:
   packages:
     - engrampa
-    - unrar
   dist: focal
   sources:
     - deb http://fr.archive.ubuntu.com/ubuntu focal main universe
