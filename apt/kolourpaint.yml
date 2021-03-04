@@ -1,0 +1,15 @@
+app: kolourpaint
+binpatch: true
+freelib: midori
+
+ingredients:
+  dist: focal
+  package: kolourpaint
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu focal main universe
+#  script:
+#    - Preparação dos ingredientes
+
+script:
+  - cp -Rf ./usr/share/icons/hicolor/scalable/apps/kolourpaint.svgz ./kolourpaint.svg
+  - cp -Rf ./kolourpaint.svg ./usr/share/icons/hicolor/256x256/apps/
