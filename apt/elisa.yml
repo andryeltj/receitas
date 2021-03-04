@@ -1,0 +1,9 @@
+app: elisa
+binpatch: true
+freelib: midori
+
+ingredients:
+  dist: focal
+  package: elisa
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu focal main universe
