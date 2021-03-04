@@ -1,0 +1,2 @@
+app: Simplenote
+getonly: https://github.com/Automattic/simplenote-electron/releases/download/v2.7.0/Simplenote-linux-2.7.0-arm64.AppImage
