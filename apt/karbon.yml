@@ -1,0 +1,12 @@
+app: karbon
+binpatch: true
+freelib: midori
+
+ingredients:
+  dist: focal
+  package: karbon
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu focal main universe
+
+script:
+  - cp -Rf ./usr/share/icons/hicolor/256x256/apps/calligrakarbon.png .
