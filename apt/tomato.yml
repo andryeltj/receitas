@@ -1,0 +1,28 @@
+app: tomato
+binpatch: true
+
+ingredients:
+  dist: xenial
+  packages:
+    - tomato
+    - dconf-gsettings-backend
+    - libcanberra0
+    - libdbusmenu-glib4
+    - libgranite4
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu xenial main universe
+  ppas:
+    - tomato-team/tomato-stable
+    - elementary-os/stable
+  script:
+    - wget -c http://ppa.launchpad.net/tomato-team/tomato-stable/ubuntu/pool/main/t/tomato/tomato_1.0.1+r106-0~ubuntu0.4.1_amd64.deb
+
+script:
+  - echo "[Desktop Entry]
+  - Type=Application
+  - Name=Tomato
+  - Exec=tomato
+  - Icon=tomato
+  - Terminal=false
+  - Categories=Utility" > tomato.desktop
+  - sed -i 's|;||g' tomato.desktop
