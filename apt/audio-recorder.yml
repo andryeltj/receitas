@@ -1,0 +1,23 @@
+app: audio-recorder
+binpatch: true
+
+ingredients:
+  dist: focal
+  packages:
+    - gstreamer-plugins
+    - vorbisenc
+    - oggmux
+    - avenc_aac
+    - avmux_mp4
+    - flacenc
+    - wavenc
+    - speexenc
+    - fakesink
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu focal main universe
+  ppas:
+    - audio-recorder/ppa
+
+script:
+  - cp -Rf ./usr/share/icons/hicolor/scalable/apps/audio-recorder.svg .
+  - cp -Rf ./audio-recorder.svg ./usr/share/icons/hicolor/256x256/apps/
