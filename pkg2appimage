@@ -35,6 +35,10 @@ usage() {
   exit 1
 }
 
+rkname="$1"
+rkname=`echo $rkname | sed -e 's|.yml||g'`
+echo $rkname > /tmp/itemk.txt
+
 if [ $# -eq 0 ] || [ "x${!#}" = "x--di" ] ; then
   usage
 fi
@@ -148,9 +152,11 @@ if [ -e "${HERE}/usr/share/pkg2appimage/functions.sh" ] ; then
   . "${HERE}/usr/share/pkg2appimage/functions.sh"
 elif [ -z "$FUNCTIONS_SH" ] ; then
   if [ ! -e functions.sh ] ; then
+    echo "*" >> /etc/aio/aiostore/$rkname.html
  #   wget -q --show-progress https://github.com/AppImage/AppImages/raw/${PKG2AICOMMIT}/functions.sh -O ./functions.sh
     wget -q --show-progress https://github.com/andryeltj/receitas/raw/${PKG2AICOMMIT}/functions.sh -O ./functions.sh
   fi
+    echo "*" >> /etc/aio/aiostore/$rkname.html
   . ./functions.sh
 else
   if [ -e "$FUNCTIONS_SH" ] ; then
@@ -169,6 +175,7 @@ if [ ! -z $ARCH] ; then
 fi
 
 if [ ! -z "${_ingredients_ghreleases[0]}" ] ; then
+  echo "*" >> /etc/aio/aiostore/$rkname.html
   for GHREPO in "${_ingredients_ghreleases[@]}" ; do
     wget -q --show-progress "https://github.com/${GHREPO}/releases/" -O /tmp/gh-release.html
     DEB=$(cat /tmp/gh-release.html | grep ".deb" | grep x86_64 | head -n 1 | cut -d '"' -f 2)
@@ -253,6 +260,7 @@ if [ ! -z "${_ingredients_dist}" ] ; then
   if [ ! -z "${_ingredients_debs[0]}" ] ; then
     for DEB in "${_ingredients_debs[@]}" ; do
       if [ ! -f $(basename "$DEB") ] ; then
+        echo "*" >> /etc/aio/aiostore/$rkname.html
         wget -q --show-progress -c $DEB
       fi
     done
@@ -278,6 +286,7 @@ if [ ! -z "${_ingredients_dist}" ] ; then
   if which aria2c &>/dev/null; then
     dltool=aria2c
   else
+    echo "*" >> /etc/aio/aiostore/$rkname.html
     dltool="wget -q --show-progress"
   fi
 
@@ -307,6 +316,7 @@ find . -path *icons* -path *64* -name "*$LOWERAPP*" -exec cp {} usr/share/icons/
 find . -path *icons* -path *128* -name "*$LOWERAPP*" -exec cp {} usr/share/icons/hicolor/128x128/apps/ \; || true
 find . -path *icons* -path *256* -name "*$LOWERAPP*" -exec cp {} usr/share/icons/hicolor/256x256/apps/ \; || true
 find . -path *icons* -path *512* -name "*$LOWERAPP*" -exec cp {} usr/share/icons/hicolor/512x512/apps/ \; || true
+echo "*" >> /etc/aio/aiostore/$rkname.html
 
 get_icon
 
@@ -402,6 +412,7 @@ if [ -z "$DESKTOP" ] ; then
   echo "desktop file not found, aborting"
   exit 1
 else
+  echo "*" >> /etc/aio/aiostore/$rkname.html
   desktop-file-validate "$DESKTOP" || exit 1
   ORIG=$(grep -o "^Exec=.*$" "${DESKTOP}" | head -n 1| cut -d " " -f 1)
   REPL=$(basename $(grep -o "^Exec=.*$" "${DESKTOP}" | head -n 1 | cut -d " " -f 1 | sed -e 's|Exec=||g'))
@@ -471,5 +482,6 @@ fi
 # Go out of AppImage
 cd ..
 
+echo "*" >> /etc/aio/aiostore/$rkname.html
 generate_type2_appimage
 ls -lh ../out/*.AppImage
