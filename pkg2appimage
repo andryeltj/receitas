@@ -38,6 +38,7 @@ usage() {
 rkname="$1"
 rkname=`echo $rkname | sed -e 's|/home/apps/receitas/||g'`
 rkname=`echo $rkname | sed -e 's|.yml||g'`
+rkname=`echo $rkname | tr '[:upper:]' '[:lower:]'`
 echo $rkname > /tmp/itemk.txt
 
 if [ $# -eq 0 ] || [ "x${!#}" = "x--di" ] ; then
