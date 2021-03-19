@@ -1,2 +1,2 @@
 app: stremio
-getonly: https://www.strem.io/download?platform=linux&four=true
+getonly: https://dl.strem.io/linux/v4.4.10/Stremio+4.4.10.appimage
