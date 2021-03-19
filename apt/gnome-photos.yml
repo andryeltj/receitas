@@ -1,0 +1,13 @@
+app: gnome-photos
+binpatch: true
+
+ingredients:
+  dist: focal
+  package: gnome-photos
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu focal main universe
+
+script:
+  - cp -Rf ./usr/share/applications/org.gnome.Photos.desktop .
+  - cp -Rf ./usr/share/icons/hicolor/scalable/apps/org.gnome.Photos.svg
+  - cp -Rf ./org.gnome.Photos.svg ./usr/share/icons/hicolor/256x256/apps/
