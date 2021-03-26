@@ -1,0 +1,10 @@
+app: anydesk
+binpatch: true
+
+ingredients:
+  dist: focal
+  package: anydesk
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu focal main universe
+  script:
+    - wget -c https://download.anydesk.com/linux/anydesk_6.1.0-1_amd64.deb
