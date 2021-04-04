@@ -10,3 +10,7 @@ ingredients:
     
 script:
   - cp -Rf ./usr/share/applications/qalculate-gtk.desktop .
+  - rm -Rf ./qalculate.png && rm -Rf ./usr/share/pixmaps/qalculate.png
+  - wget -c https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme/master/Papirus/64x64/apps/qalculate.svg
+  - cp -Rf ./qalculate.svg ./usr/share/pixmaps/
+  - cp -Rf ./qalculate.svg ./usr/share/icons/hicolor/256x256/apps
