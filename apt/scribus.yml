@@ -1,5 +1,6 @@
 app: scribus
 binpatch: true
+freeelib: mesa
 
 ingredients:
   dist: focal
