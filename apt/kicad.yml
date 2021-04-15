@@ -1,0 +1,18 @@
+app: kicad
+binpatch: true
+
+ingredients:
+  dist: focal
+  packages:
+    - kicad
+    - kicad-libraries
+    - kicad-symbols
+    - kicad-templates
+    - kicad-packages3d
+    - kicad-demos
+    - kicad-dbg
+  ppas:
+    - js-reynaud/kicad-5
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu focal main universe
+    - deb http://security.ubuntu.com/ubuntu focal-security main universe
