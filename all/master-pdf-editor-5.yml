@@ -1,0 +1,27 @@
+app: master-pdf-editor
+binpatch: true
+
+ingredients:
+  dist: focal
+  package: master-pdf-editor
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu focal main universe
+    - deb http://security.ubuntu.com/ubuntu focal-security main universe
+  script:
+    - wget -c https://code-industry.net/public/master-pdf-editor-5.7.53-qt5_included.x86_64.deb
+
+script:
+  - mv -f ./opt/master-pdf-editor-5 ./usr
+  - rm -Rf ./usr/bin
+  - mv -f ./usr/master-pdf-editor-5 ./usr/bin
+  - echo '[Desktop Entry]
+  - Name=Master PDF Editor 5
+  - Comment=Edit PDF files
+  - Exec=masterpdfeditor5
+  - Terminal=false
+  - Icon=masterpdfeditor5
+  - Type=Application
+  - Categories=Office;Graphics;
+  - MimeType=application/pdf;application/x-bzpdf;application/x-gzpdf;
+  - ' > masterpdfeditor5.desktop
+  - cp -Rf ./usr/bin/masterpdfeditor5.png .
