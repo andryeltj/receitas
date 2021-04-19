@@ -1,0 +1,2 @@
+app: etcher
+getonly: https://github.com/balena-io/etcher/releases/download/v1.5.117/balenaEtcher-1.5.117-x64.AppImage
