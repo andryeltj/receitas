@@ -1,0 +1,15 @@
+app: gnome-2048
+binpatch: true
+freelib: qt
+
+ingredients:
+  dist: focal
+  package: gnome-2048
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu focal main universe
+    - deb http://security.ubuntu.com/ubuntu focal-security main universe
+
+script:
+  - cp ./usr/share/applications/org.gnome.TwentyFortyEight.desktop .
+  - cp ./usr/share/icons/hicolor/scalable/apps/org.gnome.TwentyFortyEight.svg .
+  - cp ./usr/share/icons/hicolor/scalable/apps/org.gnome.TwentyFortyEight.svg ./usr/share/icons/hicolor/256x256/apps
