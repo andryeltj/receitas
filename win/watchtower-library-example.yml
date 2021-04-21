@@ -1,0 +1,40 @@
+app: watchtower-library
+binpatch: true
+type: win iso installer
+
+ingredients:
+  dist: focal
+  package: #Nome do pacote
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu focal main universe
+    - deb http://security.ubuntu.com/ubuntu focal-security main universe
+  script:
+    - wget -c https://download-a.akamaihd.net/files/media_publication/b3/ly_T.iso
+    - mkdir -p /tmp/cdrom
+    - mkdir watchtower-library
+    - wget -c https://lh3.googleusercontent.com/Kc8a94airrbRvtRjysMpBc1FvRlpw7DY8mstzfHjUk1iU9Dkz5IVa8WC7TI25zyZqEE=s256 -O wt.png
+    - tar -xf ly_t.iso /tmp/cdrom
+    - ./Wine-4.21-x86_64.AppImage install watchtower-library /tmp/cdrom/WTLSetup.exe
+    - ./Wine-4.21-x86_64.AppImage set-main-executable watchtower-library "C:/Program Files/Watchtower/Watchtower Library/T/WTLibrary.exe"
+#    - ./Wine-4.21-x86_64.AppImage run watchtower-library
+    - ./Wine-4.21-x86_64.AppImage set-name watchtower-library "Watchtower Library"
+    - ./Wine-4.21-x86_64.AppImage set-icon watchtower-library wt.png
+#	Categories of Linux
+#  AudioVideo   Audio  Video  Game  Graphics 
+#  Development  Settings  Education   Office 
+#  Network      Science   System     Utility 
+    - ./Wine-4.21-x86_64.AppImage set-category watchtower-library Office
+#	Criando o AppImage
+    - ./Wine-4.21-x86_64.AppImage create-appdir watchtower-library
+    - mkdir -p watchtower-library.AppDir/usr/share/icons/hicolor/32x32/apps
+    - mkdir -p watchtower-library.AppDir/usr/share/icons/hicolor/48x48/apps
+    - mkdir -p watchtower-library.AppDir/usr/share/icons/hicolor/256x256/apps
+    - cp -rf watchtower-library.AppDir/watchtower-library.png watchtower-library.AppDir/usr/share/icons/hicolor/32x32/apps/
+    - cp -rf watchtower-library.AppDir/watchtower-library.png watchtower-library.AppDir/usr/share/icons/hicolor/48x48/apps/
+    - cp -rf watchtower-library.AppDir/watchtower-library.png watchtower-library.AppDir/usr/share/icons/hicolor/256x256/apps/
+    - ./Wine-4.21-x86_64.AppImage test watchtower-library
+    - ./Wine-4.21-x86_64.AppImage minimize watchtower-library
+    - ./Wine-4.21-x86_64.AppImage package watchtower-library
+    
+#script:
+#  - Para alocação dentro do Appimage.
