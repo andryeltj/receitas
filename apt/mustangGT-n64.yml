@@ -1,0 +1,26 @@
+app: mustangGT
+binpatch: true
+
+ingredients:
+  dist: focal
+  packages:
+    - mupen64-ui-console
+    - mupen64-audio-all
+    - mupen64-input-all
+    - mupen64-rsp-all
+    - mupen64-video-all
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu foocal main universe
+    - deb http://security.ubuntu.com/ubuntu focal-security main universe
+  script:
+    - wget -c https://github.com/andryeltj/receitas/raw/master/basis/GT64.z64
+
+script:
+  - cp -Rf ../GT64.z64 ./usr/bin/
+  - echo "[Desktop Entry]
+  - Name=GT64
+  - Exec=mupen64plus GT64.z64
+  - Icons=GT64
+  - Terminal=false
+  - Categories=Game" > gt64.desktop
+  - 
