@@ -6,6 +6,7 @@ ingredients:
   dist: focal
   packages:
     - dolphin
+    - dolphin-plugins
     - breeze-gtk-theme
     - breeze-icon-theme
     - qt5-style-plugins
