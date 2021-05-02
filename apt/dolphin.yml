@@ -5,6 +5,7 @@ freelib: qt
 ingredients:
   dist: focal
   packages:
+    - dolphin
     - breeze-gtk-theme
     - breeze-icon-theme
     - qt5-style-plugins
