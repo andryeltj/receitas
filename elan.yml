@@ -1,0 +1,58 @@
+app: elan
+binpatch: true
+freelib: eglpango
+
+ingredients:
+  dist: focal
+  packages:
+#    - elan
+#    - vlc
+#    - libasound2
+    - libbsd0
+#    - libc6
+    - libfreetype6
+    - libpng16-16
+    - libx11-6
+    - libxau6
+#    - libxcb1
+    - libxdmcp6
+    - libxext6
+    - libxi6
+    - libxrender1
+    - libxtst6
+#    - xdg-utils
+    - zlib1g
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu focal main universe
+    - deb http://security.ubuntu.com/ubuntu focal-security main universe
+  script:
+    - wget -c https://www.mpi.nl/tools/elan/ELAN_6-1_linux.deb
+  deb: ELAN_6-1_linux.deb
+
+script:
+#  - rm -Rf ./usr
+  - mv ./opt/elan-6.1/bin/ELAN ./usr/bin
+  - mv -f ./opt/elan-6.1/lib/* ./usr/lib
+  - mv -t ./opt/elan-6.1/share/doc ./usr/share
+  - rm -Rf ./opt/elan-6.1
+  - ln -s ./usr ./opt/elan-6.1
+  - echo "[Desktop Entry]
+  - Version=1.0
+  - Name=ELAN_6-1
+  - Comment=Annotation of Audio and Video
+  - GenericName=Audio and Video Annotation Tool
+  - Exec=ELAN %F
+  - Icon=ELAN
+  - Terminal=false
+  - Type=Application
+  - Categories=Science
+  - MimeType=text/x-eaf+xml" > elan.desktop
+  - mv ./usr/lib/ELAN.png .
+  - mkdir -p ./usr/share/applications
+  - mkdir -p ./usr/share/icons/hicolor/256x256/apps
+  - mkdir -p ./usr/share/icons/hicolor/48x48/apps
+  - mkdir -p ./usr/share/icons/hicolor/32x32/apps
+  - cp ./elan.desktop ./usr/share/applications
+  - cp ./ELAN.png ./usr/share/icons/hicolor/256x256/apps
+  - cp ./ELAN.png ./usr/share/icons/hicolor/48x48/apps
+  - cp ./ELAN.png ./usr/share/icons/hicolor/32x32/apps
