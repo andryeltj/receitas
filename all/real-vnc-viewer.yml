@@ -1,0 +1,34 @@
+app: real-vnc-viewer
+binpatch: true
+
+ingredients:
+  dist: focal
+  packages:
+    - real-vnc-viewer
+    - libgcc1
+    - libxext6
+    - libx11-6
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu focal main universe
+    - deb http://security.ubuntu.com/ubuntu focal-security main universe
+  script:
+    - wget -c https://www.realvnc.com/download/file/viewer.files/VNC-Viewer-6.20.529-Linux-x64.deb
+#  deb: VNC-Viewer-6.20.529-Linux-x64.deb
+
+script:
+  - echo "[Desktop Entry]
+  - Encoding=UTF-8
+  - Name=VNC Viewer
+  - GenericName=VNC Viewer
+  - Comment=Connect to computers running VNC Server
+  - Comment[de]=Verbindung zu Computern mit aktivem VNC Server herstellen
+  - Comment[es]=Conectarse a equipos que ejecutan VNC Server
+  - Comment[fr]=Connecter les ordinateurs sous VNC Server
+  - Comment[pt]=Conecte-se a computadores com o VNC Server em execução
+  - Exec=vncviewer %f
+  - Type=Application
+  - Icon=vncviewer48x48
+  - Categories=Network
+  - MimeType=application/vnc-shortcut" > real-vnc-viewer.desktop
+  - cp -Rf ./usr/share/icons/hicolor/48x48/apps/vncviewer48x48.png .
+  - cp -Rf ./vncviewer48x48.png ./usr/share/icons/hicolor/256x256/apps/
