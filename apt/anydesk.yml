@@ -7,4 +7,9 @@ ingredients:
   sources:
     - deb http://archive.ubuntu.com/ubuntu focal main universe
   script:
-    - wget -c https://download.anydesk.com/linux/anydesk_6.1.0-1_amd64.deb
+    - LINGUA=$(echo $LANG | sed "s/_/-/g" | cut -d '-' -f 1 | tr '[:upper:]' '[:lower:]')
+    - LINK=$(wget -q https://anydesk.com/$LINGUA/downloads/linux -O - | grep -i amd64.deb | head -n 1 | cut -d '"' -f 2)
+    - wget -c $LINK
+
+script:
+  - echo "QT_QPA_PLATFORMTHEME=gtk3" > ./etc/environment
