@@ -1,0 +1,29 @@
+app: webex
+binpatch: true
+
+ingredients:
+  dist: focal
+  package: webex
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu focal main universe
+    - deb http://security.ubuntu.com/ubuntu focal-security main universe
+  script:
+    - wget -c https://binaries.webex.com/WebexDesktop-Ubuntu-Official-Package/Webex.deb
+
+script:
+  - ( cd usr/bin/ ; mv -f ../../opt/Webex/bin/* . )
+  - ( cd usr/bin/ ; rm webex.desktop )
+  - ( cd usr/lib/ ; mv -f ../../opt/Webex/lib/* . )
+  - ( cd usr/ ; mv -f ../opt/Webex/qml . )
+  - cp -Rf ./usr/bin/sparklogosmall.png .
+  - cp -Rf ./sparklogosmall.png ./usr/share/icons/hicolor/256x256/apps
+  - echo "[Desktop Entry]
+  - Name=Webex
+  - Exec=CiscoCollabHost %U
+  - Icon=sparklogosmall
+  - Terminal=false
+  - Type=Application
+  - Categories=Utility
+  - MimeType=x-scheme-handler/webexteams" > webex.desktop
+  - rm -Rf ./opt/Webex
+  - ln -s ./usr ./opt/Webex
