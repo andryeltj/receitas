@@ -1,0 +1,17 @@
+app: gwenview
+binpatch: true
+freelib: qt
+
+ingredients:
+  dist: focal
+  packages:
+    - gwenview
+    - breeze-gtk-theme
+    - breeze-icon-theme
+    - qt5-style-plugins
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu focal main universe
+    - deb http://security.ubuntu.com/ubuntu focal-security main universe
+
+script:
+  - echo "QT_QPA_PLATFORMTHEME=gtk3" > ./etc/environment
