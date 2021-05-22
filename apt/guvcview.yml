@@ -1,0 +1,9 @@
+app: guvcview
+binpatch: true
+
+ingredients:
+  dist: focal
+  package: guvcview
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu focal main universe
+    - deb http://security.ubuntu.com/ubuntu focal-security main universe
