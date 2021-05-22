@@ -7,3 +7,19 @@ ingredients:
   sources:
     - deb http://archive.ubuntu.com/ubuntu focal main universe
     - deb http://security.ubuntu.com/ubuntu focal-security main universe
+#  script:
+#    - Preparação dos ingredientes
+
+script:
+  - wget -c https://raw.githubusercontent.com/vinceliuice/Fluent-icon-theme/master/src/scalable/devices/camera-video.svg
+  - echo "[Desktop Entry]
+  - Name=guvcview
+  - Comment=A video viewer and capturer for the linux uvc driver
+  - TryExec=guvcview
+  - Exec=guvcview
+  - Icon=camera-video
+  - Terminal=false
+  - Type=Application
+  - Categories=AudioVideo
+  - StartupNotify=true" > guvcview.desktop
+  - cp -Rf ./camera-video.svg ./usr/share/icons/hicolor/256x256/apps/
