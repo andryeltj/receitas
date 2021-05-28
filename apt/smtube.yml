@@ -1,0 +1,19 @@
+app: smtube
+freelib: qt
+binpatch: true
+
+ingredients:
+  dist: $distro
+  packages:
+    - smtube
+    - breeze-gtk-theme
+    - breeze-icon-theme
+    - qt5-style-plugins
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu $distro main universe
+    - deb http://security.ubuntu.com/ubuntu $distro main universe
+  ppas:
+    - rvm/smplayer
+
+script:
+  - echo "QT_QPA_PLATFORMTHEME=gtk3" > ./etc/environment
