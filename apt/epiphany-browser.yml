@@ -1,0 +1,17 @@
+app: epiphany-browser
+freelib: eglpangos
+binpatch: true
+
+ingredients:
+  dist: bionic
+  package: epiphany-browser
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu bionic main universe
+    - deb http://security.ubuntu.com/ubuntu bionic-security main universe
+#  script:
+#    - Preparação dos ingredientes
+
+script:
+  - cp -Rf ./usr/share/applications/org.gnome.Epiphany.desktop .
+  - wget -q https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme/master/Papirus/64x64/apps/internet-web-browser.svg -O org.gnome.Epiphany.png
+  - cp -Rf ./org.gnome.Epiphany.png ./usr/share/icons/hicolor/256x256/apps
