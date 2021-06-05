@@ -2,11 +2,11 @@ app: opera-stable
 binpatch: true
 
 ingredients:
-  dist: $dist
+  dist: $distro
   package: opera-stable
   sources:
-    - deb http://archive.ubuntu.com/ubuntu $dist main universe
-    - deb http://security.ubuntu.com/ubuntu $dist-security main universe
+    - deb http://archive.ubuntu.com/ubuntu $distro main universe
+    - deb http://security.ubuntu.com/ubuntu $distro-security main universe
     - deb https://deb.opera.com/opera-stable/ stable non-free
 #  script:
 #    - Preparação dos ingredientes
