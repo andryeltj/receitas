@@ -2,9 +2,9 @@ app: lxtask
 binpatch: true
 
 ingredients:
-  dist: $dist
+  dist: $distro
   sources: 
-    - deb http://archive.ubuntu.com/ubuntu $dist main universe
+    - deb http://archive.ubuntu.com/ubuntu $distro main universe
 
 script:
   - wget -q --show-progress -c -O utilities-system-monitor.svg https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme/master/Papirus/64x64/apps/applications-utilities.svg
