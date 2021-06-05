@@ -1,0 +1,23 @@
+app: opera-stable
+binpatch: true
+
+ingredients:
+  dist: $dist
+  package: opera-stable
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu $dist main universe
+    - deb http://security.ubuntu.com/ubuntu $dist-security main universe
+    - deb https://deb.opera.com/opera-stable/ stable non-free
+#  script:
+#    - Preparação dos ingredientes
+
+script:
+  - echo "[Desktop Entry]
+  - Name=Opera
+  - Exec=opera %U
+  - Terminal=false
+  - Icon=opera
+  - Type=Application
+  - Comment=Fast and secure web browser
+  - Categories=Network" > opera.desktop
+  - cp -Rf ./usr/share/icons/hicolor/256x256/apps/opera.png .
