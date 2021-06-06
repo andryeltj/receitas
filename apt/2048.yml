@@ -3,11 +3,11 @@ binpatch: true
 freelib: qt
 
 ingredients:
-  dist: focal
+  dist: $distro
   package: gnome-2048
   sources:
-    - deb http://archive.ubuntu.com/ubuntu focal main universe
-    - deb http://security.ubuntu.com/ubuntu focal-security main universe
+    - deb http://archive.ubuntu.com/ubuntu $distro main universe
+    - deb http://security.ubuntu.com/ubuntu $distro-security main universe
 
 script:
   - cp ./usr/share/applications/org.gnome.TwentyFortyEight.desktop .
