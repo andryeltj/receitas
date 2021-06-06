@@ -2,9 +2,9 @@ app: gucharmap
 binpatch: true
 
 ingredients:
-  dist: focal
+  dist: $distro
   sources: 
-    - deb http://archive.ubuntu.com/ubuntu/ focal main universe
+    - deb http://archive.ubuntu.com/ubuntu/ $distro main universe
 
 script:
   - cat > gucharmap.desktop <<\EOF
