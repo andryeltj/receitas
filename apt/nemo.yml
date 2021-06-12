@@ -2,55 +2,25 @@ app: nemo
 binpatch: true
 
 ingredients:
-  package: nemo-data desktop-file-utils gsettings-desktop-schemas gvfs gvfs-backends gvfs-fuse libglib2.0-data shared-mime-info libatk1.0-0 libc6 libcairo-gobject2 libcairo2 libexempi8 libexif12 libgail-3-0 libgdk-pixbuf2.0-0 libgtk-3-0 libnotify4 libpango-1.0-0 libpangocairo-1.0-0 libx11-6 libxml2 samba-common samba-common-bin
-  sources: 
-    - deb http://fr.ubuntu.com/ubuntu/ focal main universe
+  dist: ulyssa
+  package: nemo
+#  exclude: libgtk-3-0
+  pretend: libgtk-3-0
+  sources:
+    - deb http://packages.linuxmint.com ulyssa main upstream import backport
+    - deb http://archive.ubuntu.com/ubuntu focal main universe
     - deb http://security.ubuntu.com/ubuntu focal-security main universe
-    - deb http://packages.linuxmint.com/ ulyana main upstream import backport #id:linuxmint_main
-  script:
-    - MINTFOLDER=http://packages.linuxmint.com/pool/backport
-    - UBFOLDER=http://fr.archive.ubuntu.com/ubuntu/pool/main
 
-    - URL1=$MINTFOLDER/n/nemo/nemo-data_4.6.4%2bulyana_all.deb
-    - URL2=$MINTFOLDER/n/nemo/nemo_4.6.4%2bulyana_amd64.deb
-    - URL3=$MINTFOLDER/c/cinnamon-desktop/cinnamon-desktop-data_4.6.2%2bulyana_all.deb
-    - URL4=$MINTFOLDER/c/cinnamon-desktop/libcinnamon-desktop4_4.6.2%2bulyana_amd64.deb
-    - URL5=$MINTFOLDER/c/cinnamon-translations/cinnamon-l10n_4.6.2_all.deb
-    - URL6=$MINTFOLDER/c/cinnamon-desktop/libcinnamon-desktop4_4.6.2%2bulyana_amd64.deb
-    - URL7=$MINTFOLDER/n/nemo-share/nemo-share_4.6.0%2bulyana_amd64.deb
-    - URL8=$MINTFOLDER/x/xapp/libxapp1_1.8.8%2bulyana_amd64.deb
-    - URL9=$MINTFOLDER/c/cinnamon-desktop/gir1.2-cinnamondesktop-3.0_4.6.2%2bulyana_amd64.deb
-    
-    - URL10=http://security.ubuntu.com/ubuntu/pool/main/s/samba/samba-common-bin_4.11.6+dfsg-0ubuntu1.1_amd64.deb
-    - URL11=http://security.ubuntu.com/ubuntu/pool/main/s/samba/samba-common_4.11.6+dfsg-0ubuntu1.1_all.deb
-    - URL12=$UBFOLDER/d/desktop-file-utils/desktop-file-utils_0.24-1ubuntu2_amd64.deb
-    - URL13=$UBFOLDER/g/gsettings-desktop-schemas/gsettings-desktop-schemas_3.36.0-1ubuntu1_all.deb
-    - URL14=$UBFOLDER/g/gvfs/gvfs_1.44.1-1ubuntu1_amd64.deb
-    - URL15=$UBFOLDER/g/gvfs/gvfs-backends_1.44.1-1ubuntu1_amd64.deb
-    - URL16=$UBFOLDER/g/gvfs/gvfs-fuse_1.44.1-1ubuntu1_amd64.deb
-    - URL17=$UBFOLDER/g/glib2.0/libglib2.0-0_2.64.2-1~fakesync1_amd64.deb
-    - URL18=$UBFOLDER/g/glib2.0/libglib2.0-data_2.64.2-1~fakesync1_all.deb
-    - URL19=$UBFOLDER/s/shared-mime-info/shared-mime-info_1.15-1_amd64.deb
-    - URL20=$UBFOLDER/a/atk1.0/libatk1.0-0_2.35.1-1ubuntu2_amd64.deb
-    - URL21=$UBFOLDER/c/cairo/libcairo-gobject2_1.16.0-4ubuntu1_amd64.deb
-    - URL22=$UBFOLDER/c/cairo/libcairo2_1.16.0-4ubuntu1_amd64.deb
-    - URL23=$UBFOLDER/e/exempi/libexempi8_2.5.1-1build1_amd64.deb
-    - URL24=http://security.ubuntu.com/ubuntu/pool/main/libe/libexif/libexif12_0.6.21-6ubuntu0.3_amd64.deb
-    - URL25=$UBFOLDER/g/gtk+3.0/libgail-3-0_3.24.18-1ubuntu1_amd64.deb
-    - URL26=$UBFOLDER/g/gdk-pixbuf/libgdk-pixbuf2.0-0_2.40.0+dfsg-3_amd64.deb
-    - URL27=$UBFOLDER/g/gtk+3.0/libgtk-3-0_3.24.18-1ubuntu1_amd64.deb
-    - URL28=$UBFOLDER/libn/libnotify/libnotify4_0.7.9-1ubuntu2_amd64.deb
-    - URL29=$UBFOLDER/p/pango1.0/libpango-1.0-0_1.44.7-2ubuntu4_amd64.deb
-    - URL30=$UBFOLDER/p/pango1.0/libpangocairo-1.0-0_1.44.7-2ubuntu4_amd64.deb
-    - URL31=$UBFOLDER/libx/libx11/libx11-6_1.6.9-2ubuntu1_amd64.deb
-    - URL32=$UBFOLDER/libx/libxml2/libxml2_2.9.10+dfsg-5_amd64.deb
 
-    - wget -q --show-progress -c $URL1 $URL2 $URL3 $URL4 $URL5 $URL6 $URL7 $URL8 $URL9 $URL10 $URL11 $URL12 $URL13 $URL14 $URL15 $URL16 $URL17 $URL18 $URL19 $URL20 $URL21 $URL22 $URL23 $URL24 $URL25 $URL26 $URL27 $URL28 $URL29 $URL30 $URL31 $URL32
-  debs:
-    - nemo-data_4.6.4%2bulyana_all.deb
-    - nemo_4.6.4%2bulyana_amd64.deb
-
-#    - deb http://packages.linuxmint.com ulyana InRelease
-#    - deb http://packages.linuxmint.com ulyana Release
 script:
-  - cp -f ./usr/share/icons/hicolor/scalable/apps/nemo.svg ./folder.svg
+  - wget -c https://github.com/linuxmint/mint-y-icons/raw/master/usr/share/icons/Mint-Y/places/128/folder.png -O system-file-manager.png
+  - cp -Rf ./system-file-manager.png ./usr/share/icons/hicolor/256x256/apps
+  - cat > ./usr/bin/prenemo <<EOF
+  - #!/bin/bash
+  - if [[ "\$1" == "nemo-desktop" ]]
+  -  then nemo-desktop %U
+  -  else nemo $1
+  - fi
+  - EOF
+  - chmod +x ./usr/bin/prenemo
+  - sed -i "s/Exec=nemo/Exec=prenemo/g" nemo.desktop
