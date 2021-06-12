@@ -200,6 +200,17 @@ fi
 
 if [ ! -z "${_ingredients_dist}" ] ; then
   rm status 2>/dev/null || true
+  # Some packages depend on an exact package in "excludedeblist" file
+  # Use
+  # ingredients:
+  #   release:
+  #     - packagename
+  if [ ! -z "${_ingredients_release[0]}" ] ; then
+   for RELEASE in "${_ingredients_release[@]}" ; do
+    sed -i "s|"$RELEASE"|#"$RELEASE"|g" excludedeblist
+    echo "#*#*#*#*#############"$RELEASE
+   done
+  fi
   generate_status
 
   # Some packages depend on packages which we do not want to bundle,
@@ -225,16 +236,6 @@ if [ ! -z "${_ingredients_dist}" ] ; then
       P_VER=$(echo "$PRETEND" | cut -d " " -f 2)
       cat status | tr '\n' '@' | sed -e 's|@@|\n\n|g' | sed -e 's|Package: '"$P_PKG"'@Status: install ok installed@Architecture: all@Version: 9:999.999.999|Package: '"$P_PKG"'@Status: install ok installed@Architecture: all@Version: '"$P_VER"'|g' | sed -e 's|@|\n|g' > status.temp
       mv status.temp status
-    done
-  fi
-  # Some packages depend on an exact package in "excludedeblist" file
-  # Use
-  # ingredients:
-  #   release:
-  #     - packagename
-  if [ ! -z "${_ingredients_release[0]}" ] ; then
-    for RELEASE in "${_ingredients_release[@]}" ; do
-      sed -i "s|"$RELEASE"|#"$RELEASE"|g" excludedeblist
     done
   fi
   
