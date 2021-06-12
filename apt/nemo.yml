@@ -4,8 +4,7 @@ binpatch: true
 ingredients:
   dist: ulyssa
   package: nemo
-#  exclude: libgtk-3-0
-  pretend: libgtk-3-0
+  release: libgtk-3-0
   sources:
     - deb http://packages.linuxmint.com ulyssa main upstream import backport
     - deb http://archive.ubuntu.com/ubuntu focal main universe
