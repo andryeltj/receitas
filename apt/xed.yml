@@ -12,4 +12,4 @@ ingredients:
 
 script:
   - wget -c https://github.com/linuxmint/mint-y-icons/raw/master/usr/share/icons/Mint-Y/apps/256/accessories-text-editor.png
-  - cp -Rf ./accessories-text-editor.svg ./usr/share/icons/hicolor/256x256/apps/
+  - cp -Rf ./accessories-text-editor.png ./usr/share/icons/hicolor/256x256/apps/
