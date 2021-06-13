@@ -1,0 +1,15 @@
+app: xed
+freelib: eglpango
+binpatch: true
+
+ingredients:
+  dist: ulyssa
+  package: xed
+  sources:
+    - deb http://packages.linuxmint.com ulyssa main upstream import backport
+    - deb http://archive.ubuntu.com/ubuntu focal main universe
+    - deb http://security.ubuntu.com/ubuntu focal-security main universe
+
+script:
+  - wget -c https://github.com/linuxmint/mint-y-icons/raw/master/usr/share/icons/Mint-Y/apps/256/accessories-text-editor.png
+  - cp -Rf ./accessories-text-editor.svg ./usr/share/icons/hicolor/256x256/apps/
