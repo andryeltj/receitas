@@ -1,0 +1,16 @@
+app: woeusb
+binpatch: true
+
+ingredients:
+  dist: bionic
+  package: woeusb
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu bionic main universe
+    - deb http://security.ubuntu.com/ubuntu bionic-security main universe
+  ppas:
+    - nilarimogard/webupd8
+
+script:
+  - cp -Rf ./usr/share/applications/woeusbgui.desktop .
+  - wget -c https://github.com/WoeUSB/WoeUSB-ng/raw/master/.github/woeusb-logo.png -O woeusbgui-icon.png
+  - cp -Rf ./woeusbgui-icon.png ./usr/share/icons/hicolor/256x256/apps/
