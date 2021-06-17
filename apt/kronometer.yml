@@ -1,0 +1,21 @@
+app: kronometer
+binpatch: true
+
+ingredients:
+  dist: focal
+  packages:
+    - kronometer
+    - breeze-gtk-theme
+    - breeze-icon-theme
+    - qt5-style-plugins
+  release:
+    - libqt5gui5
+    - libgl1
+    - libgl1-mesa
+    - libgbm1
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu focal main universe
+    - deb http://security.ubuntu.com/ubuntu focal-security main universe
+
+script:
+  - echo "QT_QPA_PLATFORMTHEME=gtk3" > ./etc/environment
