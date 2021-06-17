@@ -207,12 +207,13 @@ if [ ! -z "${_ingredients_dist}" ] ; then
   #     - packagename
   if [ ! -z "${_ingredients_release[0]}" ] ; then
    for RELEASE in "${_ingredients_release[@]}" ; do
-    sed -i "s|"$RELEASE"|#"$RELEASE"|g" excludedeblist
+    echo $RELEASE >> /tmp/freelib
+#    sed -i "s|"$RELEASE"|#"$RELEASE"|g" excludedeblist
     echo "#*#*#*#*#############"$RELEASE
    done
   fi
   generate_status
-
+  rm -Rf /tmp/freelib
   # Some packages depend on packages which we do not want to bundle,
   # in addition to the global excludes defined in excludedeblist.
   # Use
