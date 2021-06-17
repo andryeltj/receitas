@@ -1,4 +1,5 @@
 app: kronometer
+freelib: qt
 binpatch: true
 
 ingredients:
