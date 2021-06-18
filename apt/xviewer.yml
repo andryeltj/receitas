@@ -1,0 +1,18 @@
+app: xviewer
+binpatch: true
+
+ingredients:
+  dist: ulyssa
+  package: xviewer
+  release:
+    - libpango-1.0-0
+    - libpangocairo-1.0-0
+    - libpangoft2-1.0-0
+  sources:
+    - deb http://packages.linuxmint.com ulyssa main upstream import backport
+    - deb http://archive.ubuntu.com/ubuntu focal main universe
+    - deb http://security.ubuntu.com/ubuntu focal-security main universe
+
+script:
+  - cp -Rf ./usr/share/icons/hicolor/scalable/apps/xviewer.svg .
+  - cp -Rf ./xviewer.svg ./usr/share/icons/hicolor/256x256/apps/
