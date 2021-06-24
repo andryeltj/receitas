@@ -1,0 +1,22 @@
+app: org.deepin.browser
+binpatch: true
+
+ingredients:
+  dist: eagle
+  packages:
+    - org.deepin.browser
+    - deepin-icon-theme
+    - deepin-gtk-theme
+    - dde-qt5integration
+    - qt5-style-plugins
+    - x11-utils
+  release:
+    - libgbm1
+  sources:
+    - deb http://packages.deepin.com/deepin/ apricot main non-free Release InRelease
+    - deb https://community-store-packages.deepin.com/appstore eagle appstore
+    - deb https://community-packages.deepin.com/printer eagle non-free
+
+script:
+  - cp -Rf ./usr/share/icons/hicolor/256x256/apps/org.deepin.browser.svg .
+  - echo "QT_QPA_PLATFORMTHEME=gtk3" > ./etc/environment
