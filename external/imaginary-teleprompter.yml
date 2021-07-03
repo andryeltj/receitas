@@ -1,0 +1,13 @@
+app: imaginary-teleprompter
+binpatch: true
+
+ingredients:
+  package: imaginary-teleprompter
+  script:
+    - FONTFILE=$(wget -q "https://imaginary.tech/teleprompter/" -O - | grep "AppImage" | grep "64 bit" | awk '{print $4}' | cut -d '"' -f 2)
+    - FONTFILE=$(sed 's|/download||g' <<< $FONTFILE)
+    - FONTFILE=$(sed 's|projects|project|g' <<< $FONTFILE)
+    - FONTFILE=$(sed 's|/files||g' <<< $FONTFILE)
+    - FONTFILE=$(sed 's|//|//phoenixnap.dl.|g' <<< $FONTFILE)
+    - wget -c $FONTFILE
+    - mv -f $(find *.AppImage) ../out
