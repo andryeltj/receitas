@@ -1,6 +1,5 @@
 app: stellarium
 binpatch: true
-#getonly: true
 
 ingredients:
   script:
