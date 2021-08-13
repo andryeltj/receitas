@@ -1,0 +1,8 @@
+app: stellarium
+binpatch: true
+getonly: true
+
+ingredients:
+  script:
+    - URL=$(wget https://stellarium.org -O - | grep ".AppImage" | cut -d '"' -f 2)
+    - wget -c $URL
