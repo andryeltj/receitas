@@ -1,0 +1,7 @@
+app: winmodule
+ingredients:
+  script: 
+    - URL=$(wget https://github.com/sudo-give-me-coffee/wine32-deploy/releases/ -O - | grep '.AppImage"' | cut -d '"' -f 2 )
+    - wget -c https://github.com$URL
+    - chmod +x ./*.AppImage
+    - mv ./*.AppImage /etc/aio/
