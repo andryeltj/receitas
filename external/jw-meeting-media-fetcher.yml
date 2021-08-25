@@ -4,4 +4,4 @@ getonly: true
 ingredients:
   script:
     - URL=$(wget https://github.com/sircharlo/jw-meeting-media-fetcher/releases -O - | grep AppImage | grep href | cut -d '"' -f 2 | head -n 1)
-    - wget -c $URL
+    - wget -c https://github.com$URL
