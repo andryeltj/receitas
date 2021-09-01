@@ -1,0 +1,14 @@
+app: ghostwriter
+binpatch: true
+
+ingredients:
+  dist: focal
+  package: ghostwriter
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu focal main universe
+    - deb http://security.ubuntu.com/ubuntu focal-security main universe
+  release:
+    - libegl
+    - libgbm
+  ppas:
+    - wereturtle/ppa
