@@ -8,7 +8,7 @@ ingredients:
     - deb http://archive.ubuntu.com/ubuntu focal main universe
   script:
     - LINGUA=$(echo $LANG | sed "s/_/-/g" | cut -d '-' -f 1 | tr '[:upper:]' '[:lower:]')
-    - LINK=$(wget -q https://anydesk.com/$LINGUA/downloads/thank-you?dv=deb_64 -O - | grep -i amd64.deb | head -n 1 | cut -d '"' -f 2)
+    - LINK=$(wget -q https://anydesk.com/$LINGUA/downloads/thank-you?dv=deb_64 -O - | grep -i amd64.deb | head -n 1 | cut -d '"' -f 6)
     - wget -c $LINK
 
 script:
