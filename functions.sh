@@ -204,7 +204,8 @@ generate_appimage()
   mkdir -p ../out || true
   rm ../out/$APP"-"$VERSION".glibc"$GLIBC_NEEDED"-"$ARCH".AppImage" 2>/dev/null || true
   GLIBC_NEEDED=$(glibc_needed)
-  ./AppImageAssistant ./$APP.AppDir/ ../out/$APP"-"$VERSION".glibc"$GLIBC_NEEDED"-"$ARCH".AppImage"
+  echo $ARCH
+  ARCH=$ARCH ./AppImageAssistant ./$APP.AppDir/ ../out/$APP"-"$VERSION".glibc"$GLIBC_NEEDED"-"$ARCH".AppImage"
 }
 
 # Generate AppImage type 2
