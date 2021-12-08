@@ -205,7 +205,7 @@ generate_appimage()
   rm ../out/$APP"-"$VERSION".glibc"$GLIBC_NEEDED"-"$ARCH".AppImage" 2>/dev/null || true
   GLIBC_NEEDED=$(glibc_needed)
   echo $ARCH
-  ARCH=$ARCH ./AppImageAssistant ./$APP.AppDir/ ../out/$APP"-"$VERSION".glibc"$GLIBC_NEEDED"-"$ARCH".AppImage"
+  ARCH=$(uname -a | awk '{pront $12}') ./AppImageAssistant ./$APP.AppDir/ ../out/$APP"-"$VERSION".glibc"$GLIBC_NEEDED"-"$ARCH".AppImage"
 }
 
 # Generate AppImage type 2
