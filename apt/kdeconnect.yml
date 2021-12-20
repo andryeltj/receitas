@@ -1,0 +1,16 @@
+app: kdeconnect
+binpatch: true
+
+ingredients:
+  package: kdeconnect
+  release:
+    - libgbm
+    - libegl
+  dist: focal
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu focal main universe
+    - deb http://security.ubuntu.com/ubuntu focal-security main universe
+script:
+  - cp -Rf ./usr/share/applications/org.kde.kdeconnect.daemon.desktop .
+  - echo "Categories=System" >> org.kde.kdeconnect.daemon.desktop
+  - sed -i -e 's|/usr|././|g' org.kde.kdeconnect.daemon.desktop
