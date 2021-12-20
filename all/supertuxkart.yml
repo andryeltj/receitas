@@ -6,13 +6,14 @@ ingredients:
   source:
     - deb http://archive.ubuntu.com/ubuntu focal main universe
   script:
-    - wget -c https://github.com/supertuxkart/stk-code/releases/download/1.2/SuperTuxKart-1.2-linux.tar.xz
+    - ITEM=$(wget -q "https://supertuxkart.net/Download" -O - | grep Linux | awk -F '"' '{print $8}')
+    - wget -q -c $ITEM -O STK.tar.xz
     
 
 script:
-  - cp ../SuperTuxKart-1.2-linux.tar.xz .
-  - tar -xvf SuperTuxKart-1.2-linux.tar.xz
-  - cp -rf ./SuperTuxKart-1.2-linux/* ./usr/bin
+#  - mv ../STK.tar.xz .
+  - tar -xvf ../STK.tar.xz
+  - cp -rf ./SuperTuxKart*/* ./usr/bin
   - echo '[Desktop Entry]
   - Name=Super Tux Kart
   - Type=Application
@@ -21,14 +22,14 @@ script:
   - Categories=Game' > supertuxcart.desktop
   - cp ./usr/bin/data/supertuxkart_256.png ./supertuxkart.png
   - cp supertuxkart.png ./usr/share/icons/hicolor/256x256/apps
-  - rm -Rf SuperTuxKart-1.2-linux.tar.xz
-  - rm -Rf SuperTuxKart-1.2-linux
+#  - rm -Rf STK.tar.xz
+  - rm -Rf SuperTuxKart*
   - cd ./usr/bin
 ##Para x64
-  - rm -Rf bin
-  - mv bin-64 bin
-  - rm -Rf lib
-  - mv lib-64 lib
+#  - rm -Rf bin
+#  - mv bin-64 bin
+#  - rm -Rf lib
+#  - mv lib-64 lib
   - ln -s bin bin-64
   - ln -s lib lib-64
 ##Para x86
