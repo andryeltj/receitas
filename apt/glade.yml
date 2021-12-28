@@ -1,0 +1,17 @@
+app: glade
+binpatch: true
+
+ingredients:
+  dist: focal
+  package: glade
+  release:
+    - libegl
+    - libgbm
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu focal main universe
+    - deb http://security.ubuntu.com/ubuntu focal-security main universe
+#  script:
+#    - Preparação dos ingredientes
+
+#script:
+#  - Para alocação dentro do Appimage.
