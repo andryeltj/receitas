@@ -9,6 +9,10 @@ ingredients:
     - breeze-gtk-theme
     - breeze-icon-theme
     - qt5-style-plugins
+  release:
+    - libgbm
+    - libegl
+    - libegl-mesa0
   sources:
     - deb http://archive.ubuntu.com/ubuntu $distro main universe
     - deb http://security.ubuntu.com/ubuntu $distro main universe
