@@ -1,0 +1,21 @@
+app: geda
+binpatch: true
+
+ingredients:
+  dist: focal
+  packages:
+    - geda
+    - pcb
+    - gerbv
+  exclude:
+    - pcbdiff
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu bionic main universe
+    - deb http://security.ubuntu.com/ubuntu bionic-security main universe
+
+script:
+  - cp ./usr/share/applications/geda-gschem.desktop .
+  - wget -q https://www.tablix.org/~avian/geda/icons/application-x-geda-schematic.svg -O geda-gschem.svg
+#  - cp ./usr/share/icons/hicolor/scalable/apps/geda-gschem.svg .
+  - cp geda-gschem.svg ./usr/share/icons/hicolor/256x256/apps
+  - rm ./usr/share/pcb/tools/pcbdiff
