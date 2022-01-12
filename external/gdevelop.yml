@@ -1,0 +1,7 @@
+app: gdevelop
+binpatch: true
+
+ingredients:
+  script:
+    - DLD=$(wget "https://gdevelop-app.com/download/" -O - | sed "s/></\n/g" | grep AppImage | awk -F '"' '{print $2}')
+    - aria2c $DLD
