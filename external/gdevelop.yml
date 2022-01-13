@@ -3,5 +3,5 @@ binpatch: true
 
 ingredients:
   script:
-    - DLD=$(wget "https://gdevelop-app.com/download/" -O - | sed "s/></\n/g" | grep AppImage | awk -F '"' '{print $2}')
+    - DLD=$(wget "https://gdevelop-app.com/download/" -O - | sed "s/></\n/g" | grep AppImage | awk -F '"' '{print $2}' | head -n 1 )
     - aria2c $DLD
