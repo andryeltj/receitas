@@ -1,5 +1,6 @@
 app: gdevelop
 binpatch: true
+getonly: true
 
 ingredients:
   script:
