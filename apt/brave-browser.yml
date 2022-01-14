@@ -1,0 +1,41 @@
+app: brave-browser
+binpatch: true
+
+ingredients:
+  dist: focal
+  packages:
+    - brave-browser
+    - apt-transport-https
+    - curl
+#  release:
+#    - libera os pacotes que estão na blacklist
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu focal main universe
+    - deb http://security.ubuntu.com/ubuntu focal-security main universe
+    - deb https://brave-browser-apt-release.s3.brave.com/ stable main
+#  ppas:
+#    - 
+#  script:
+#    - curl -fsSLo brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+#    - echo "deb [signed-by=brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|tee sources.list
+script:
+#  - Para alocação dentro do Appimage.
+#  - cp ./opt/brave.com/brave/product_logo_256.png ./brave-browser.png
+#  - cp brave-browser.png ./usr/share/icons/hicolor/256x256/apps
+  
+  - mv ./opt/brave.com/brave/product_logo_64.png usr/share/icons/hicolor/64x64/apps/brave-browser.png
+  - mv ./opt/brave.com/brave/product_logo_32.png usr/share/icons/hicolor/32x32/apps/brave-browser.png
+  - mv ./opt/brave.com/brave/product_logo_256.png usr/share/icons/hicolor/256x256/apps/brave-browser.png
+  - mv ./opt/brave.com/brave/product_logo_24.png usr/share/icons/hicolor/24x24/apps/brave-browser.png
+  - mv ./opt/brave.com/brave/product_logo_128.png usr/share/icons/hicolor/128x128/apps/brave-browser.png
+  - mv ./opt/brave.com/brave/product_logo_48.png usr/share/icons/hicolor/48x48/apps/brave-browser.png
+  - cp usr/share/icons/hicolor/256x256/apps/brave-browser.png .
+  - sed -i -e 's|/usr/bin/brave-browser-stable %U|AppRun|g' brave-browser.desktop
+#  - sed -i -e 's|3.26|3.00|g' opt/brave.com/brave/chrome
+  - cat > ./AppRun <<\EOF
+  - #!/bin/sh
+  - HERE=$(dirname $(readlink -f "${0}"))
+  - export LD_LIBRARY_PATH="${HERE}"/usr/lib:$PATH
+  - "${HERE}"/opt/brave.com/brave/brave --password-store=basic $@
+  - EOF
+  - chmod a+x ./AppRun
