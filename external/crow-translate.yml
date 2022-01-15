@@ -1,0 +1,21 @@
+app: crow-translate
+binpatch: true
+getonly: true
+
+ingredients:
+  dist: focal
+  package: crow-translate
+#  release:
+#    - libera os pacotes que estão na blacklist
+#  sources:
+#    - deb http://archive.ubuntu.com/ubuntu focal main universe
+ #   - deb http://security.ubuntu.com/ubuntu focal-security main universe
+#  ppas:
+#    - 
+  script:
+    - HUB="https://github.com"
+    - DLD=$(wget -q $HUB/crow-translate/crow-translate/releases -O - | grep AppImage | head -n 1 | awk -F '"' '{print $2}');
+    - wget -q $HUB$DLD
+
+#script:
+#  - Para alocação dentro do Appimage.
