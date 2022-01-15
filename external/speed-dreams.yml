@@ -1,0 +1,12 @@
+app: speed-dreams
+binpatch: true
+getonly: true
+
+ingredients:
+  dist: focal
+  package: speed-dreams
+  script:
+    - HUB="https://sourceforge.net"
+    - PAGE=$(wget -q $HUB/projects/speed-dreams/files -O - | grep show-for-medium | grep class=\"folder | head -n 1 | awk -F '"' '{print $4}'  | sed "s|/stats/timeline||g" )
+    - DLD=$(wget -q $HUB$PAGE -O - | grep show-for-medium | grep AppImage | awk -F '"' '{print $4}' | sed "s|/stats/timeline||g")
+    - aria2c -c $HUB$DLD
