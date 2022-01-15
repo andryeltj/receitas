@@ -1,0 +1,20 @@
+app: evolution
+binpatch: true
+
+ingredients:
+  dist: focal
+  package: evolution
+  release:
+    - libgbm
+    - libegl
+    - libgl1
+    - libegl-mesa0
+    - libgtk-3
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu focal main universe
+    - deb http://archive.ubuntu.com/ubuntu focal-updates main universe
+    - deb http://security.ubuntu.com/ubuntu focal-security main universe
+
+script:
+  - cp ./usr/share/icons/hicolor/scalable/apps/evolution.svg .
+  - cp evolution.svg ./usr/share/icons/hicolor/256x256/apps/
