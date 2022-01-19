@@ -1,0 +1,16 @@
+app: normcap
+binpatch: true
+getonly: true
+
+ingredients:
+
+  package: normcap
+
+
+
+  script:
+    - HUB="https://github.com"
+    - repo='dynobo/normcap'
+    - DLD=$(wget -q $HUB/$repo/releases -O - | grep AppImage | head -n 1 | awk -F '"' '{print $2}')
+    - wget -q $HUB$DLD
+
