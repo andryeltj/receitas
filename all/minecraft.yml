@@ -1,0 +1,10 @@
+app: minecraft
+binpatch: true
+ingredients:
+  dist: focal
+  source:
+    - deb http://archive.ubuntu.com/ubuntu focal main universe
+    - deb http://archive.ubuntu.com/ubuntu focal-updates main universe
+    - deb http://security.ubuntu.com/ubuntu main
+  script:
+    - aria2c -q -c https://launcher.mojang.com/download/Minecraft.deb
