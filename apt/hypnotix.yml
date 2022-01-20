@@ -1,0 +1,28 @@
+app: hypnotix
+binpatch: true
+
+
+ingredients:
+  dist: una
+  packages:
+    - hypnotix
+    - python3
+    - youtube-dl
+    - python3-requests
+    - python3-mpv
+    - libmpv-dev
+  release:
+    - libpango
+    - libegl
+    - libgbm
+  sources:
+    - deb http://packages.linuxmint.com una main upstream import backport
+    - deb http://archive.ubuntu.com/ubuntu focal main universe
+    - deb http://archive.ubuntu.com/ubuntu bionic-updates main universe
+    - deb http://security.ubuntu.com/ubuntu bionic-security main universe
+
+  script:
+    - aria2c -c http://fr.archive.ubuntu.com/ubuntu/pool/universe/p/python-mpv/python3-mpv_0.5.2-1_all.deb
+script:
+  - cp ./usr/share/icons/hicolor/scalable/apps/hypnotix.svg .
+  - cp hypnotix.svg ./usr/share/icons/hicolor/256x256/apps
