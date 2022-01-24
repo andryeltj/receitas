@@ -1,0 +1,9 @@
+app: cerebro
+binpatch: true
+getonly: true
+
+ingredients:
+  package: cerebro
+  script:
+    - DLD=$(wget -q -c "https://cerebroapp.com" -O - | grep AppImage | awk -F '"' '{print $2}')
+    - aria2c $DLD
