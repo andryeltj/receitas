@@ -1,0 +1,19 @@
+app: handbrake-gtk
+binpatch: true
+
+
+ingredients:
+  dist: focal
+  package: handbrake-gtk
+#  release:
+#    - libera os pacotes que estão na blacklist
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu focal main universe
+    - deb http://security.ubuntu.com/ubuntu focal-security main universe
+  ppas:
+    - stebbins/handbrake-releases
+
+script:
+  - cp ./usr/share/applications/fr.handbrake.ghb.desktop .
+  - cp ./usr/share/icons/hicolor/scalable/apps/fr.handbrake.ghb.svg .
+  - cp ./fr.handbrake.ghb.svg ./usr/share/icons/hicolor/scalable/apps
