@@ -1,0 +1,11 @@
+app: flightgear
+binpatch: true
+
+ingredients:
+  package: flightgear
+  script:
+    - USRAGT='Mozilla/5.0 (X11; Linux x86_64; rv:71.0) Gecko/20100101 Firefox/71.0 PaleMoon/29.3.0'
+    - HUB="https://sourceforge.net/projects/"
+    - package='flightgear'
+    - DLD=$(wget -q --user-agent="$USRAGT" $HUB$package/files/latest/download -O - | grep AppImage | grep meta | awk -F 'url' '{print $2}' | awk -F '=' '{print $2}' | sed 's/?ts//g')
+    - aria2c $DLD
