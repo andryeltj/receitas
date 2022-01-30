@@ -1,0 +1,22 @@
+app: kdiamond
+binpatch: true
+#getonly: #true or false
+
+ingredients:
+  dist: focal
+  packages:
+    - kdiamond
+    - breeze-gtk-theme
+    - qt5-style-plugins
+    - --no-install-recommends
+  release:
+    - libgbm1
+    - libegl
+    - libegl-mesa0
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu focal main universe
+    - deb http://security.ubuntu.com/ubuntu focal-security main universe
+
+script:
+  - echo "QT_QPA_PLATFORMTHEME=gtk3" > ./etc/environment
+
