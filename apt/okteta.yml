@@ -1,0 +1,21 @@
+app: okteta
+binpatch: true
+
+ingredients:
+  dist: focal
+  packages:
+    - okteta
+    - qt5-style-plugins
+    - --no-install-recommends
+  release:
+    - libgbm
+    - libegl
+    - libegl-mesa0
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu focal main universe
+    - deb http://security.ubuntu.com/ubuntu focal-security main universe
+
+script:
+  - wget https://apps.kde.org/app-icons/org.kde.okteta.svg -O okteta.svg
+  - cp okteta.svg ./usr/share/icons/hicolor/256x256/apps
+  - echo "QT_QPA_PLATFORMTHEME=gtk3" > ./etc/environment
