@@ -1,7 +1,13 @@
 app: jw-meeting-media-fetcher
+binpatch: true
 getonly: true
 
 ingredients:
+
+  package: jw-meeting-media-fetcher
   script:
-    - URL=$(wget https://github.com/sircharlo/jw-meeting-media-fetcher/releases -O - | grep AppImage | grep href | cut -d '"' -f 2 | head -n 1)
-    - wget -c https://github.com$URL
+    - HUB="https://github.com"
+    - repo='sircharlo/jw-meeting-media-fetcher'
+    - DLD=$(wget -q $HUB/$repo/releases/latest -O - | grep '.AppImage" rel' | head -n 1 | awk -F '"' '{print $2}')
+    - aria2c -q $HUB$DLD
+    - chmod +x *.AppImage
