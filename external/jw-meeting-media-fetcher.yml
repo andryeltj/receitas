@@ -3,8 +3,9 @@ binpatch: true
 getonly: true
 
 ingredients:
-
-  package: jw-meeting-media-fetcher
+  dist: github
+  packages:
+    - jw-meeting-media-fetcher
   script:
     - HUB="https://github.com"
     - repo='sircharlo/jw-meeting-media-fetcher'
