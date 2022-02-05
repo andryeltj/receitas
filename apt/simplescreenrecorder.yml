@@ -1,20 +1,21 @@
 app: simplescreenrecorder
 binpatch: true
 
-freelib: qt
 ingredients:
   dist: focal
   packages:
     - simplescreenrecorder
     - breeze-gtk-theme
     - qt5-style-plugins
+  release:
+    - libgbm
+    - libegl
+    - libegl-mesa0
   sources:
-    - deb http://archive.ubuntu.com/ubuntu focal main universe
-    - deb http://security.ubuntu.com/ubuntu focal-security main universe
+    - deb http://archive.ubuntu.com/ubuntu focal main universe multiverse
+    - deb http://security.ubuntu.com/ubuntu focal-security main universe multiverse
+    - deb http://archive.ubuntu.com/ubuntu focal-updates main restricted universe multiverse
   ppas:
     - maarten-baert/simplescreenrecorder
-#  script:
-#    - Preparação dos ingredientes
-
 script:
   - echo "QT_QPA_PLATFORMTHEME=gtk3" > ./etc/environment
