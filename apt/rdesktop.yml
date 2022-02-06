@@ -2,12 +2,21 @@ app: rdesktop
 binpatch: true
 
 ingredients:
-  package: libglade2-0 rdesktop
+  packages:
+    - libglade2-0
+    - rdesktop
   dist: focal
   sources: 
     - deb http://archive.ubuntu.com/ubuntu/ focal main universe
+  script:
+    - aria2c -q https://github.com/andryeltj/receitas/raw/master/gtkdialog_0.8.3-1~trusty0_amd64.deb
 
 script:
+  - wget -q https://raw.githubusercontent.com/andryeltj/receitas/master/scripts/mstsc
+  - mv mstsc ./usr/bin
+  - chmod +x ./usr/bin/mstsc
+  - wget https://github.com/andryeltj/receitas/raw/master/icons/mstsc.png
+  - cp mstsc.png ./usr/share/icons/hicolor/256x256/apps
   - cat > mstsc.desktop <<\EOF
   - [Desktop Entry]
   - Categories=Network;GTK;
@@ -18,5 +27,3 @@ script:
   - StartupNotify=false
   - Type=Application
   - EOF
-  - cp ../../../../apps/receitas/mstsc.png .
-  - cp ../../../../usr/bin/mstsc ./usr/bin/
