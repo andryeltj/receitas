@@ -6,24 +6,17 @@ export ASSISTENTE="
 <vbox homogeneous=\"true\">
 <text label=\"Usuário:\"></text>
 <text label=\"Senha:\"></text>
-<text label=\"IP:\"></text>
+<text label=\"IP/Porta:\"></text>
 </vbox>
 <vbox>
 <entry><variable>USERIN</variable></entry>
 <entry visibility=\"false\" caps-lock-warning=\"true\"><variable>PASSIN</variable></entry>
-<entry><default>177.159.239.82</default><variable>IPIN</variable></entry>
+<entry><variable>IPIN</variable></entry>
 
 </vbox>
 </hbox>
 <vbox>
-<hbox><button label=\"TESTE\"><action>rdesktop -u $"USERIN" -p $"PASSIN" -k pt-br -a 16ppp $"IPIN"</action></button></hbox>
-<button label=\"Salvar\">
-<action>rm -i -f conectar</action>
-<action>echo '#!/bin/sh' >> conectar &</action>
-<action>echo rdesktop -u $"USERIN" -p $"PASSIN" -k pt-br -f -a 16ppp $"IPIN" >> conectar &</action>
-<action>chmod 777 conectar -R &</action>
-<action type=\"exit\">Exit</action>
-</button>
+<button label=\"CONECTAR\"><action>rdesktop -u $"USERIN" -p $"PASSIN" -k pt-br -a 16ppp $"IPIN"</action><action type=\"exit\">Exit</action></button>
 </vbox>
 </vbox>
 </window>
