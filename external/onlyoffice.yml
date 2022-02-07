@@ -1,2 +1,12 @@
 app: onlyoffice
-getonly: http://download.onlyoffice.com/install/desktop/editors/linux/DesktopEditors-x86_64.AppImage
+binpatch: true
+getonly: true
+
+ingredients:
+  dist: download
+  packages:
+    - onlyoffice
+  script:
+    - DLD='http://download.onlyoffice.com/install/desktop/editors/linux/DesktopEditors-x86_64.AppImage'
+    - aria2c -q $DLD
+    - chmod +x *.AppImage
