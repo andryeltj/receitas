@@ -4,8 +4,6 @@ binpatch: true
 ingredients:
   dist: focal
   package: palemoon
-  script:
-    - wget -q --show-progress -c 'http://addons.palemoon.org/index.html?component=download&id=darkmoon@lootyhoof-pm&version=2.5.0' -O darkmoon@lootyhoof-pm.xpi
   sources:
     - deb http://archive.ubuntu.com/ubuntu focal main universe
     - deb http://download.opensuse.org/repositories/home:/stevenpusser/xUbuntu_20.04/ /
@@ -21,8 +19,5 @@ script:
   - StartupNotify=false
   - Type=Application
   - EOF
-
-  - eXPI=./usr/lib/palemoon/browser/extensions
   - wget -q --show-progress "https://raw.githubusercontent.com/andryeltj/receitas/master/basis/google.xml" -O ./usr/lib/palemoon/browser/searchplugins/google.xml
-  - cp ../darkmoon@lootyhoof-pm.xpi $eXPI/darkmoon@lootyhoof-pm.xpi
   - wget -q --show-progress -c -O ./usr/share/icons/hicolor/256x256/apps/palemoon.svg https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme/master/Papirus/64x64/apps/palemoon.svg
