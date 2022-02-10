@@ -1,2 +1,14 @@
 app: vmpk
-getonly: https://ufpr.dl.sourceforge.net/project/vmpk/vmpk/0.8.2/vmpk-0.8.2-linux-x86_64.AppImage
+binpatch: true
+
+ingredients:
+  dist: sourceforge
+  packages:
+    - vmpk
+  script:
+    - USRAGT='Mozilla/5.0 (X11; Linux x86_64; rv:71.0) Gecko/20100101 Firefox/71.0 PaleMoon/29.3.0'
+    - HUB="https://sourceforge.net/projects/"
+    - package='vmpk'
+    - DLD=$(wget -q --user-agent="$USRAGT" $HUB$package/files/latest/download -O - | grep AppImage | grep meta | awk -F 'url' '{print $2}' | awk -F '=' '{print $2}' | sed 's/?ts//g')
+    - aria2c $DLD
+    - chmod +x *.AppImage
