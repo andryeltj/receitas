@@ -1,0 +1,14 @@
+app: freetube
+binpatch: true
+getonly: true
+
+ingredients:
+  dist: github
+  packages:
+    - freetube
+  script:
+    - HUB="https://github.com"
+    - repo='FreeTubeApp/FreeTube'
+    - DLD=$(wget -q $HUB/$repo/releases/latest -O - | grep '.AppImage" rel' | head -n 1 | awk -F '"' '{print $2}')
+    - aria2c -q $HUB$DLD
+    - chmod +x *.AppImage
