@@ -1,3 +1,14 @@
 app: terminal-finances
-getonly: https://github.com/terroo/terminal-finances/releases/download/v1.0.0/Terminal_Finances-x86_64.AppImage
 binpatch: true
+getonly: true
+
+ingredients:
+  dist: github
+  packages:
+    - terminal-finances
+  script:
+    - HUB="https://github.com"
+    - repo='terroo/terminal-finances'
+    - DLD=$(wget -q $HUB/$repo/releases/latest -O - | grep '.AppImage" rel' | head -n 1 | awk -F '"' '{print $2}')
+    - aria2c -q $HUB$DLD
+    - chmod +x *.AppImage
