@@ -10,7 +10,7 @@ ingredients:
     - HUB="https://github.com"
     - repo='supertuxkart/stk-code'
     - DLD=$(wget -q $HUB/$repo/releases/latest -O - | grep tar.xz | awk -F '"' '/64bit/ {print $2}' | head -n 1)
-    - VERSION=$(echo $DLD | awk -F "-" '{print $3}')
+    - echo $DLD | awk -F "-" '{print $3}' > VERSION
     - aria2c -q -c $HUB$DLD -o STK.tar.xz
 script:
 #  - mv ../STK.tar.xz .
