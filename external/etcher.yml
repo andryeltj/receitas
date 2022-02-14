@@ -1,2 +1,14 @@
 app: etcher
-getonly: https://github.com/balena-io/etcher/releases/download/v1.5.117/balenaEtcher-1.5.117-x64.AppImage
+binpatch: true
+getonly: true
+
+ingredients:
+  dist: github
+  packages:
+    - etcher
+  script:
+    - HUB="https://github.com"
+    - repo='balena-io/etcher'
+    - DLD=$(wget -q $HUB/$repo/releases/latest -O - | grep '.AppImage" rel' | head -n 1 | awk -F '"' '{print $2}')
+    - aria2c -q $HUB$DLD
+    - chmod +x *.AppImage
