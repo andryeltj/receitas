@@ -1,7 +1,8 @@
 #! /bin/bash
 FILER=$(pwd)
+echo $FILER" "`whoami`
 if [[ '`whoami`' == 'root' ]];  then
-$(cd $FILER && ./unetboot.bin)
+$(cd $FILER; sh -c unetboot.bin)
 else
-$(cd $FILER && pkexec ./unetboot.bin)
+$(cd $FILER; pkexec unetboot.bin)
 fi
