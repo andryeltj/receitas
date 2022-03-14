@@ -1,0 +1,24 @@
+app: aiot
+binpatch: true
+
+ingredients:
+  dist: focal
+  packages:
+    - aiot
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu focal main universe multiverse
+    - deb http://security.ubuntu.com/ubuntu focal-security main universe multiverse
+    - deb http://archive.ubuntu.com/ubuntu focal-updates main restricted universe multiverse
+  script:
+    - LINHA=$(date '+%Y%m%d');
+    - TEMPO=$(date '+%H%M.%S');
+    - VERS=$LINHA$TEMPO
+    - echo $VERSION > VERSION
+script:
+  - echo "[Desktop Entry]
+  - Name=AiO Test
+  - Exec=pwd
+  - Icon=aiot
+  - Categories=Utility
+  - Type=Application" > aiot.desktop
+  - wget -q -c https://www.svgrepo.com/download/129858/test-tube.svg -O aiot.svg
