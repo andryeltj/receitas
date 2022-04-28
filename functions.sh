@@ -294,10 +294,12 @@ generate_status()
     wget -q -c "https://github.com/AppImage/AppImages/raw/${PKG2AICOMMIT}/excludedeblist"
     EXCLUDEDEBLIST=excludedeblist
   fi
-  while IFS= read -r line
+  if [ -e "/tmp/freelib" ]; then
+    while IFS= read -r line
 	do
       sed -i "s|"$line"|#"$line"|g" excludedeblist
-  done < "/tmp/freelib"
+    done < "/tmp/freelib"
+  fi
   rm status 2>/dev/null || true
   for PACKAGE in $(cat "$EXCLUDEDEBLIST" | cut -d "#" -f 1) ; do
     printf "Package: $PACKAGE\nStatus: install ok installed\nArchitecture: all\nVersion: 9:999.999.999\n\n" >> status
