@@ -322,6 +322,22 @@ unset LD_PRELOAD
 
 # Try to copy icons to standard locations where appimaged can pick them up
 mkdir -p usr/share/icons/hicolor/{22x22,24x24,32x32,48x48,64x64,128x128,256x256,512x512}/apps/
+if [ ! -z "${_store_icon}" ] ; then
+  if [ ! -z "${_store_icon[0]}" ] ; then
+   for STOREICON in "${_store_icon[@]}" ; do
+    FORMATICON=$(echo $STOREICON | awk '{print $2}')
+    if [[ "$FORMATICON" == "svg" ]]; then
+     echo $STOREICON | awk '{print $1}' | base64 -d > icon.svg
+    else
+     echo $STOREICON | awk '{print $1}' | base64 -d > icon.webp
+     ffmpeg -i icon.webp icon.$FORMATICON
+     rm icon.webp
+    fi
+    mv icon.$FORMATICON "$LOWERAPP".$FORMATICON
+    cp "$LOWERAPP".$FORMATICON usr/share/icons/hicolor/256x256/apps/
+   done
+  fi
+fi
 find . -path *icons* -path *22* -name "*$LOWERAPP*" -exec cp {} usr/share/icons/hicolor/22x22/apps/ \; || true
 find . -path *icons* -path *24* -name "*$LOWERAPP*" -exec cp {} usr/share/icons/hicolor/24x24/apps/ \; || true
 find . -path *icons* -path *32* -name "*$LOWERAPP*" -exec cp {} usr/share/icons/hicolor/32x32/apps/ \; || true
