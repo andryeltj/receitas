@@ -16,3 +16,19 @@ ingredients:
 script:
   - cp -Rf ./usr/share/icons/hicolor/scalable/apps/kolourpaint.svgz ./kolourpaint.svg
   - cp -Rf ./kolourpaint.svg ./usr/share/icons/hicolor/256x256/apps/
+  
+  - rm -Rf ./usr/share/bash-completion/completions/blkdiscard used for determining architecture armhf
+  - rm -Rf ./usr/share/bash-completion/completions/ctrlaltdel used for determining architecture armhf
+  - rm -Rf ./usr/share/bash-completion/completions/pivot_root used for determining architecture armhf
+  - rm -Rf ./usr/share/bash-completion/completions/resizepart used for determining architecture armhf
+  - rm -Rf ./usr/share/bash-completion/completions/fsck.minix used for determining architecture armhf
+  - rm -Rf ./usr/share/bash-completion/completions/mkfs.minix used for determining architecture armhf
+  - rm -Rf ./usr/share/bash-completion/completions/mountpoint used for determining architecture armhf
+  - rm -Rf ./usr/share/doc/HTML/ca/kcontrol5/kcm_ssl/module.png used for determining architecture i386
+  - rm -Rf ./usr/share/doc/HTML/de/kolourpaint/KolourPaint.png used for determining architecture i386
+  - rm -Rf ./usr/share/doc/HTML/en/kolourpaint/view_thumbnails.png used for determining architecture i386
+  - rm -Rf ./usr/share/doc/HTML/nl/kolourpaint/KolourPaint.png used for determining architecture i386
+  - rm -Rf ./usr/share/doc/HTML/pt_BR/kolourpaint/view_thumbnails.png used for determining architecture i386
+  - rm -Rf ./usr/share/doc/libgphoto2-6/camlibs/README.smal used for determining architecture armhf
+  - rm -Rf ./usr/share/info/gnupg-card-architecture.png used for determining architecture i386
+  - rm -Rf ./usr/share/locale/nn/LC_SCRIPTS/ki18n5/skjermelement.pmapc used for determining architecture armhf
