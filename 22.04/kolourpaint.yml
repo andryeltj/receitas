@@ -1,0 +1,32 @@
+## Builded with AIO
+## aio -m kolourpaint -qt -xt
+app: kolourpaint
+binpatch: true
+#getonly: #true or false
+
+ingredients:
+  dist: jammy
+  packages:
+    - kolourpaint
+    - breeze-gtk-theme
+    - qt5-style-plugins
+  exclude:
+    - default-dbus-system-bus
+  release:
+    - libgbm
+    - libegl
+    - libegl-mesa0
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu jammy main universe multiverse
+    - deb http://security.ubuntu.com/ubuntu jammy-security main universe multiverse
+    - deb http://archive.ubuntu.com/ubuntu jammy-updates main restricted universe multiverse
+#  script:
+#    - Preparação dos ingredientes
+script:
+  - if [[ -e "./etc" ]]; then troca=troca; else mkdir ./etc; fi
+  - echo "QT_QPA_PLATFORMTHEME=gtk3" > ./etc/environment
+  file: KolourPaint-21.12.3.glibc2.34-x86_64.AppImage
+  size: 106M
+  categories: Qt;KDE;Graphics;2DGraphics;RasterGraphics;
+  keywords: 
+  version: 21.12.3

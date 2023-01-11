@@ -1,0 +1,57 @@
+## Builded with AIO
+## aio -m lxterminal -xt
+app: lxterminal
+binpatch: true
+#getonly: #true or false
+
+ingredients:
+  dist: jammy
+  packages:
+    - lxterminal
+#  release:
+#    - libera os pacotes que estão na blacklist
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu jammy main universe multiverse
+    - deb http://security.ubuntu.com/ubuntu jammy-security main universe multiverse
+    - deb http://archive.ubuntu.com/ubuntu jammy-updates main restricted universe multiverse
+#  script:
+#    - Preparação dos ingredientes
+  file: LXTerminal-0.4.0.glibc2.34-x86_64.AppImage
+  size: 23M
+  categories: GTK;System;TerminalEmulator;
+  keywords: console command line execute 
+console command line execute 
+consola  línia d'ordres  executa 
+konzole příkazový řádek spuštění 
+console command line execute konsol kommandolinje eksekver 
+Konsole Befehlszeile Ausführen 
+κονσόλα γραμμή εντολών εκτέλεση 
+consola línea de órdenes ejecutar 
+konsool käsurida käivita 
+kontsola komando-lerroa exekutatu 
+konsoli pääte terminaali komentorivi komentotulkki suorita aja console command line execute 
+console  ligne de commande  exécuter 
+consola liña de ordes executar 
+מסוף קונסול קונסולה שורת פקודה הפעלה הרצה חלון שחור טרמינל 
+konzola naredbeni redak izvrši 
+konzol parancssor végrehajtás 
+konsol baris perintah eksekusi 
+コンソール コマンドライン 実行 
+консоль командалық жол жөнелту орындау console terminal 
+console 콘솔 command line 명령줄 execute 실행 
+kiwandikiro kiragiro tandika mulimu 
+pultas komandų eilutė vykdyti 
+konsoll ledetekst kjør 
+terminal opdrachtregel uitvoeren 
+konsola wiersz poleceń wykonaj 
+consola linha de comandos executar 
+console linha de comando executar 
+консоль командная строка выполнить запустить 
+конзола командна линија извршно 
+console command line execute 
+కన్సోల్ ఆదేశ పంక్తి అమలుచేయి 
+konsol komut satırı çalıştır 
+консоль командна стрічка виконати 
+console command line execute 终端 命令行 执行 
+console command line execute 終端機 終端 文字介面 執行 小黑窗 命令列 
+  version: 0.4.0

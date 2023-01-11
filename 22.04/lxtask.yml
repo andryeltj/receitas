@@ -1,5 +1,5 @@
 ## Builded with AIO
-## aio -m lxtask -icon https://raw.githubusercontent.com/vinceliuice/Fluent-icon-theme/master/src/scalable/apps/utilities-system-monitor.svg -xt
+## aio -m lxtask -qt -icon https://raw.githubusercontent.com/vinceliuice/Fluent-icon-theme/master/src/scalable/apps/utilities-system-monitor.svg -xt
 app: lxtask
 binpatch: true
 #getonly: #true or false
@@ -8,8 +8,10 @@ ingredients:
   dist: jammy
   packages:
     - lxtask
-#  release:
-#    - libera os pacotes que estão na blacklist
+  release:
+    - libgbm
+    - libegl
+    - libegl-mesa0
   sources:
     - deb http://archive.ubuntu.com/ubuntu jammy main universe multiverse
     - deb http://security.ubuntu.com/ubuntu jammy-security main universe multiverse
