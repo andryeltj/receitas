@@ -1,0 +1,16 @@
+## Builded with AIO
+## aio -m chatgpt -github lencx/chatgpt -xt
+app: chatgpt
+binpatch: true
+getonly: true
+
+ingredients:
+  dist: github
+  packages:
+    - chatgpt
+  script:
+    - HUB="https://api.github.com/repos"
+    - repo='lencx/chatgpt'
+    - DLD=$(wget -q $HUB/$repo/releases -O - | grep 'AppImage"' | grep 'browser' | head -n 1 | awk -F '"' '{print $4}')
+    - aria2c -q -c $DLD
+    - chmod +x *.AppImage
