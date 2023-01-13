@@ -1,0 +1,23 @@
+## Builded with AIO
+## aio -m warpinator -add dconf-service default-dbus-session-bus dbus -name jammy -mint vanessa -exclude dconf-gsettings-backend -release libpango libcairo2 dbus -xt
+app: warpinator
+binpatch: true
+
+ingredients:
+  dist: vanessa
+  packages:
+    - warpinator
+    - dconf-service
+    - default-dbus-session-bus
+    - dbus
+  release:
+    - libpango
+    - libcairo2
+    - dbus
+  sources:
+    - deb http://packages.linuxmint.com vanessa main upstream import backport
+    - deb http://archive.ubuntu.com/ubuntu jammy main universe multiverse
+    - deb http://security.ubuntu.com/ubuntu jammy-security main universe multiverse
+    - deb http://archive.ubuntu.com/ubuntu jammy-updates main restricted universe multiverse
+script:
+ - cp -Rf ./usr/share/icons/hicolor/64x64@2/apps/org.x.Warpinator.png .
