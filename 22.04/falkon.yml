@@ -1,0 +1,30 @@
+app: falkon
+binpatch: true
+
+ingredients:
+  dist: $dist
+  packages:
+    - falkon
+  release:
+    - libgbm
+    - libegl
+    - libegl-mesa0
+    - breeze-gtk-theme
+    - qt5-style-plugins
+    - --no-install-recommends
+  sources:
+    - deb http://archive.neon.kde.org/user focal main
+    - deb-src http://archive.neon.kde.org/user focal main
+    - deb http://archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse
+    - deb http://security.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse
+    - deb http://archive.ubuntu.com/ubuntu/ focal-updates main restricted universe multiverse
+script:
+  - cp -Rf ./lib/* ./usr/lib
+  - rm -Rf ./lib
+  - ln -s ./usr/lib .
+  - mkdir ./usr/lib/x86_64-linux-gnu/qt5/libexec/share ./usr/lib/x86_64-linux-gnu/qt5/libexec/share/qt5
+  - ln -s ../../../../usr/share/qt5/resources ./usr/lib/x86_64-linux-gnu/qt5
+  - ln -s ../../../../usr/share/qt5/translations ./usr/lib/x86_64-linux-gnu/qt5
+  - ln -s ../../../../../../../usr/share/qt5/translations ./usr/lib/x86_64-linux-gnu/qt5/libexec/share/qt5
+  - ln -s ../../../../../../../usr/share/qt5/resources ./usr/lib/x86_64-linux-gnu/qt5/libexec/share/qt5
+  - echo "QT_QPA_PLATFORMTHEME=gtk3" > ./etc/environment
