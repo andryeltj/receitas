@@ -1,0 +1,33 @@
+## Builded with AIO
+## aio -m nemo -add at-spi2-core libatspi2.0-0 dconf-service default-dbus-session-bus dconf-gsettings-backend -mint vanessa -icon https://github.com/linuxmint/nemo/blob/master/data/icons/hicolor/apps/scalable/nemo.svg -release libgtk-3-0 -xt
+app: nemo
+binpatch: true
+
+ingredients:
+  dist: vanessa
+  packages:
+    - nemo
+    - at-spi2-core
+    - libatspi2.0-0
+    - dconf-service
+    - default-dbus-session-bus
+    - dconf-gsettings-backend
+  release:
+    - libgtk-3-0
+    - libpango
+    - libcairo2
+    - dbus
+  sources:
+    - deb http://packages.linuxmint.com vanessa main upstream import backport
+    - deb http://archive.ubuntu.com/ubuntu jammy main universe multiverse
+    - deb http://security.ubuntu.com/ubuntu jammy-security main universe multiverse
+    - deb http://archive.ubuntu.com/ubuntu jammy-updates main restricted universe multiverse
+#  script:
+#    - Preparação dos ingredientes
+store:
+  iconlink: https://github.com/linuxmint/nemo/blob/master/data/icons/hicolor/apps/scalable/nemo.svg
+  file: Files-5.4.3+vanessa.glibc2.35-x86_64.AppImage
+  size: 94M
+  categories: GNOME;GTK;Utility;Core;
+  keywords: folders filesystem explorer 
+  version: 5.4.3+vanessa
