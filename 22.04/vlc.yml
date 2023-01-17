@@ -1,0 +1,22 @@
+## Builded with AIO
+## aio -m vlc -add librsvg2-2 -exclude libegl1 -release libgbm1 libcairo2 -shbd dkname=; dkfile=; while IFS= read -r line; do; newdk=''$dkfile; echo '' > $dkname -xt
+app: vlc
+binpatch: true
+#getonly: #true or false
+
+ingredients:
+  dist: jammy
+  packages:
+    - vlc
+    - librsvg2-2
+    - libegl1
+  release:
+    - libgbm1
+    - libcairo2
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu jammy main universe multiverse
+    - deb http://security.ubuntu.com/ubuntu jammy-security main universe multiverse
+    - deb http://archive.ubuntu.com/ubuntu jammy-updates main restricted universe multiverse
+script:
+  - ( localectl | grep LANG= | awk -F '=' '{print $2}' > etc/locale.conf )
+  - sed 's|/usr/bin/||g' -i vlc.desktop
