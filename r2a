@@ -383,6 +383,7 @@ if [ ! -z "${_store_iconlink}" ] ; then
     fi
     #mv icon.$FORMATICON $ICONDESKTOP.$FORMATICON
     cp $ICONDESKTOP.$FORMATICON usr/share/icons/hicolor/256x256/apps/
+    cp $ICONDESKTOP.$FORMATICON /tmp/r2aicon/icon.$FORMATICON
    done
   fi
 fi
