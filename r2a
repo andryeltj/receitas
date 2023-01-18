@@ -350,7 +350,7 @@ export PYTHONHOME="${HERE}"/usr/
 export XDG_DATA_DIRS="${HERE}"/usr/share/:"${XDG_DATA_DIRS}"
 export PERLLIB="${HERE}"/usr/share/perl5/:"${HERE}"/usr/lib/perl5/:"${PERLLIB}"
 export GSETTINGS_SCHEMA_DIR="${HERE}"/usr/share/glib-2.0/schemas/:"${GSETTINGS_SCHEMA_DIR}"
-export QT_PLUGIN_PATH="${HERE}"/usr/lib/qt4/plugins/:"${HERE}"/usr/lib/i386-linux-gnu/qt4/plugins/:"${HERE}"/usr/lib/x86_64-linux-gnu/qt4/plugins/:"${HERE}"/usr/lib/aarch64-linux-gnu/qt4/plugins/:"${HERE}"/usr/lib32/qt4/plugins/:"${HERE}"/usr/lib64/qt4/plugins/:"${HERE}"/usr/lib/qt5/plugins/:"${HERE}"/usr/lib/i386-linux-gnu/qt5/plugins/:"${HERE}"/usr/lib/x86_64-linux-gnu/qt5/plugins/:"${HERE}"/usr/lib/aarch64-linux-gnu/qt5/plugins/:"${HERE}"/usr/lib32/qt5/plugins/:"${HERE}"/usr/lib64/qt5/plugins/:"${QT_PLUGIN_PATH}"
+export QT_PLUGIN_PATH="${HERE}"/usr/lib/qt4/plugins/:"${HERE}"/usr/lib/i386-linux-gnu/qt4/plugins/:"${HERE}"/usr/lib/x86_64-linux-gnu/qt4/plugins/:"${HERE}"/usr/lib/aarch64-linux-gnu/qt4/plugins/:"${HERE}"/usr/lib32/qt4/plugins/:"${HERE}"/usr/lib64/qt4/plugins/:"${HERE}"/usr/lib/qt5/plugins/:"${HERE}"/usr/lib/i386-linux-gnu/qt5/plugins/:"${HERE}"/usr/lib/x86_64-linux-gnu/qt5/plugins/:"${HERE}"/usr/lib/aarch64-linux-gnu/qt5/plugins/:"${HERE}"/usr/lib32/qt5/plugins/:"${HERE}"/usr/lib64/qt5/plugins/:"${HERE}"/usr/lib/qt6/plugins/:"${HERE}"/usr/lib/i386-linux-gnu/qt6/plugins/:"${HERE}"/usr/lib/x86_64-linux-gnu/qt6/plugins/:"${HERE}"/usr/lib/aarch64-linux-gnu/qt6/plugins/:"${HERE}"/usr/lib32/qt6/plugins/:"${HERE}"/usr/lib64/qt6/plugins/:"${QT_PLUGIN_PATH}"
 EXEC=$(grep -e '^Exec=.*' "${HERE}"/*.desktop | head -n 1 | cut -d "=" -f 2- | sed -e 's|%.||g')
 exec ${EXEC} "$@"
 EOF
@@ -392,7 +392,7 @@ fi
 
 # Prevent Qt from loading plugins from the system
 unset QTPATH
-QTPATH=$(find usr/lib -type d -name qt4 -or -name qt5 | sed -e 's|usr/|../|g')
+QTPATH=$(find usr/lib -type d -name qt4 -or -name qt5 -or -name qt6 | sed -e 's|usr/|../|g')
 if [ ! -z $QTPATH ] ; then
 cat > usr/bin/qt.conf <<EOF
 [Paths]
