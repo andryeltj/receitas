@@ -369,19 +369,21 @@ fi
 if [ ! -z "${_store_iconlink}" ] ; then
   if [ ! -z "${_store_iconlink[0]}" ] ; then
    for STOREICONLINK in "${_store_iconlink[@]}" ; do
-    LISTDK=$(ls *.desktop); ICONDESKTOP=$(cat "$LISTDK" | awk -F '=' '/Icon/{print $2}' | awk -F '.' '{print $1}');
-    FORMATICON=$(echo $STOREICONLINK | awk -F '.' '{print $NF}')
-    if [[ "$FORMATICON" == "svg" ]]; then
-     #echo $STOREICON | awk '{print $1}' | base64 -d > icon.svg
-     if [[ "$localicon" == "" ]]; then aria2c -q -c $STOREICONLINK -o $ICONDESKTOP.svg; else echo $localicon | base64 -d > $ICONDESKTOP.svg; fi
-    else
-     if [[ "$localicon" == "" ]]; then aria2c -q -c $STOREICONLINK -o $ICONDESKTOP.$FORMATICON; else 
-      echo $localicon | base64 -d > icon.webp
-      ffmpeg -i icon.webp $ICONDESKTOP.$FORMATICON
-      rm icon.webp
+    LISTDK=$(ls *.desktop); FORMATICON=$(echo $STOREICONLINK | awk -F '.' '{print $NF}'); ICONDESKTOP=$(cat "$LISTDK" | awk -F '=' '/Icon/{print $2}' | awk -F '.$FORMATICON' '{print $1}');
+    if [[ $STOREICONLINK == *'http:'* || $STOREICONLINK == *'https:'* || $STOREICONLINK == *'ftp:'* ]]; then 
+     if [[ "$FORMATICON" == "svg" ]]; then
+      #echo $STOREICON | awk '{print $1}' | base64 -d > icon.svg
+      if [[ "$localicon" == "" ]]; then aria2c -q -c $STOREICONLINK -o $ICONDESKTOP.svg; else echo $localicon | base64 -d > $ICONDESKTOP.svg; fi
+     else
+      if [[ "$localicon" == "" ]]; then aria2c -q -c $STOREICONLINK -o $ICONDESKTOP.$FORMATICON; else 
+       echo $localicon | base64 -d > icon.webp
+       ffmpeg -i icon.webp $ICONDESKTOP.$FORMATICON
+       rm icon.webp
+      fi
      fi
+    else
+      cp $STOREICONLINK .
     fi
-    #mv icon.$FORMATICON $ICONDESKTOP.$FORMATICON
     cp $ICONDESKTOP.$FORMATICON usr/share/icons/hicolor/256x256/apps/
     cp $ICONDESKTOP.$FORMATICON /tmp/r2aicon/icon.$FORMATICON
    done
