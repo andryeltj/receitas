@@ -327,12 +327,14 @@ get_icon()
   find ./usr/share/icons -path *128* -name $LOWERAPP.png -exec cp {} . \; 2>/dev/null || true
   find ./usr/share/icons -path *512* -name $LOWERAPP.png -exec cp {} . \; 2>/dev/null || true
   find ./usr/share/icons -path *256* -name $LOWERAPP.png -exec cp {} . \; 2>/dev/null || true
+  find ./usr/share/icons -path *scalable* -name $LOWERAPP.png -exec cp {} . \; 2>/dev/null || true
   ls -lh $LOWERAPP.png || true
   find ./usr/share/pixmaps/$LOWERAPP.svg -exec cp {} . \; 2>/dev/null || true
   find ./usr/share/icons -path *64* -name $LOWERAPP.svg -exec cp {} . \; 2>/dev/null || true
   find ./usr/share/icons -path *128* -name $LOWERAPP.svg -exec cp {} . \; 2>/dev/null || true
   find ./usr/share/icons -path *512* -name $LOWERAPP.svg -exec cp {} . \; 2>/dev/null || true
   find ./usr/share/icons -path *256* -name $LOWERAPP.svg -exec cp {} . \; 2>/dev/null || true
+  find ./usr/share/icons -path *scalable* -name $LOWERAPP.svg -exec cp {} . \; 2>/dev/null || true
   ls -lh $LOWERAPP.svg || true
 }
 
