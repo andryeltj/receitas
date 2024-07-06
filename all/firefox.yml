@@ -7,27 +7,12 @@ app: Firefox
 
 ingredients:
   script:
-    - DLD=$(wget -q "https://www.mozilla.org/pt-BR/firefox/all/" -O - | grep -E "os=linux64&amp;lang=pt-BR" | cut -d'"' -f2 | head -n 1)
-    - wget -c $DLD --trust-server-names
+    - aria2c -q 'https://download.mozilla.org/?product=firefox-latest&os=Linux64&lang=pt-BR'
     - ls firefox-*.tar.bz2 | cut -d "-" -f 2 | sed -e 's|.tar.bz2||g' > VERSION
     - tar xf firefox*.tar.bz2
-    # - URL2=$(wget -c "https://api.github.com/repos/gorhill/uBlock/releases" -O - | grep browser_download_url | grep 'firefox.signed.xpi"' | head -n 1 | cut -d '"' -f 4)
-    # - URL3=https://www.eff.org/files/https-everywhere-latest.xpi
-    # - URL4=https://www.eff.org/files/privacy-badger-latest.xpi
-    # - URL5=$(wget -q -c "https://addons.mozilla.org/en-US/firefox/addon/i-dont-care-about-cookies/" -O - | sed -e 's|\\\u002F|/|g' | grep -Po 'https://addons.mozilla.org/firefox/downloads/file/[0-9]*/.*?xpi' | head -n 1)
-    # - wget -c "$URL2" "$URL5" # "$URL3" "$URL4"
-
 script:
   - cp -r ../firefox/* usr/bin/
-  - mkdir -p usr/bin/browser/extensions/
-  # extensions must be renamed to <something>@<something else>.<some tld>.xpi
-  # the suitable names for this can be determined by extracting the xpi (using e.g., unzip) and using methods like, e.g., https://stackoverflow.com/a/23825825
-  # if such an ID has not been defined, the name will be <something>@jetpack.xpi, you can use e.g., grep -R jetpack.xpi to find this value in an extracted .xpi
-  # - cp ../*firefox.signed.xpi "usr/bin/browser/extensions/uBlock0@raymondhill.net.xpi"
-  # XPI filename: https://github.com/EFForg/https-everywhere/blob/8f6880cbe4d32349f915ad8f90255486910d140a/test/tor-browser.sh#L33
-  # - cp ../https-everywhere-latest.xpi usr/bin/browser/extensions/https-everywhere-eff@eff.org.xpi
-  # - cp ../privacy-badger-latest.xpi usr/bin/browser/extensions/jid1-MnnxcxisBPnSXQ-eff@jetpack.xpi
-  # - cp ../i_dont_care_about_cookies-*.xpi usr/bin/browser/extensions/jid1-KKzOGWgsW3Ao4Q@jetpack.xpi
+  - mkdir -p usr/bin/browser/extensions/i
   - find . -name mozicon128.png -exec cp {} firefox.png \;
   - find . -name default128.png -exec cp {} firefox.png \;
   - find . -name mozicon128.png -exec cp {} usr/share/icons/hicolor/128x128/apps/firefox.png \;
